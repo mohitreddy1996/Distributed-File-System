@@ -1,7 +1,10 @@
 package common;
 
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.Serializable;
+import java.nio.file.Paths;
+import java.util.Iterator;
 
 /** Distributed filesystem paths.
 
@@ -21,10 +24,20 @@ import java.util.*;
  */
 public class Path implements Iterable<String>, Comparable<Path>, Serializable
 {
+    private static final String DELIMITER = "/";
+    private String pathString;
+
+    // Kind of a hack.
+    private static java.nio.file.Path stringToPath (String string)
+    {
+        /** : Not sure. Refer Documentation once again.*/
+        return Paths.get(string).normalize();
+    }
+
     /** Creates a new path which represents the root directory. */
     public Path()
     {
-        throw new UnsupportedOperationException("not implemented");
+        this (DELIMITER);
     }
 
     /** Creates a new path by appending the given component to an existing path.
@@ -38,7 +51,19 @@ public class Path implements Iterable<String>, Comparable<Path>, Serializable
     */
     public Path(Path path, String component)
     {
-        throw new UnsupportedOperationException("not implemented");
+        // this has to be used.... But should be first statement in constructor. ToDo.
+        java.nio.file.Path newPath = stringToPath(path.pathString).resolve(component);
+        String newPathString = newPath.toString();
+        if (component.contains("/"))
+        {
+            // according to the comments;
+            throw new IllegalArgumentException("Component contains \'/\'");
+        }
+        if (component.equals(""))
+        {
+            // according to the comments;
+            throw new IllegalArgumentException("Component given is an empty string");
+        }
     }
 
     /** Creates a new path from a path string.
@@ -53,9 +78,28 @@ public class Path implements Iterable<String>, Comparable<Path>, Serializable
                                          a forward slash, or if the path
                                          contains a colon character.
      */
+
+    private static boolean emptyPath (String path)
+    {
+        return (path.length() == 0);
+    }
+
     public Path(String path)
     {
-        throw new UnsupportedOperationException("not implemented");
+        if(emptyPath(path) || (path.charAt(0) != DELIMITER.charAt(0)))
+        {
+            // according to the comments;
+            throw new IllegalArgumentException("Given path does not start with \'/\'");
+        }
+
+        if(path.contains(":"))
+        {
+            // according to the comments;
+            throw new IllegalArgumentException("Given path contain \':\'");
+        }
+
+        this.pathString = stringToPath(path).toString();
+
     }
 
     /** Returns an iterator over the components of the path.
