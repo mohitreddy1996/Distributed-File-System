@@ -4,7 +4,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.Serializable;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
 
 /** Distributed filesystem paths.
 
@@ -113,7 +116,13 @@ public class Path implements Iterable<String>, Comparable<Path>, Serializable
     @Override
     public Iterator<String> iterator()
     {
-        throw new UnsupportedOperationException("not implemented");
+        List<String> components = new ArrayList<>();
+        if (isRoot())
+        {
+            return components.iterator();
+        }
+        Collections.addAll(components, pathString.split(DELIMITER));
+        return components.iterator();
     }
 
     /** Lists the paths of all files in a directory tree on the local
@@ -138,7 +147,8 @@ public class Path implements Iterable<String>, Comparable<Path>, Serializable
      */
     public boolean isRoot()
     {
-        throw new UnsupportedOperationException("not implemented");
+        int numElements = stringToPath(this.pathString).getNameCount();
+        return (numElements == 0);
     }
 
     /** Returns the path to the parent of this path.
@@ -148,7 +158,13 @@ public class Path implements Iterable<String>, Comparable<Path>, Serializable
      */
     public Path parent()
     {
-        throw new UnsupportedOperationException("not implemented");
+        java.nio.file.Path parent = stringToPath(this.pathString).getParent();
+        if (parent == null)
+        {
+            throw new IllegalArgumentException("Path represents the root directory");
+        }
+        Path parentPath = new Path(parent.toString());
+        return parentPath;
     }
 
     /** Returns the last component in the path.
@@ -159,7 +175,12 @@ public class Path implements Iterable<String>, Comparable<Path>, Serializable
      */
     public String last()
     {
-        throw new UnsupportedOperationException("not implemented");
+        java.nio.file.Path fileName = stringToPath(this.pathString).getFileName();
+        if (fileName == null)
+        {
+            throw new IllegalArgumentException("Path represents the root");
+        }
+        return fileName.toString();
     }
 
     /** Determines if the given path is a subpath of this path.
@@ -174,7 +195,21 @@ public class Path implements Iterable<String>, Comparable<Path>, Serializable
      */
     public boolean isSubpath(Path other)
     {
-        throw new UnsupportedOperationException("not implemented");
+        int otherLen = stringToPath(other.pathString).getNameCount();
+        int pathLen = stringToPath(this.pathString).getNameCount();
+        if (otherLen <= pathLen)
+        {
+            if (otherLen == 0)
+            {
+                return true;
+            }
+            java.nio.file.Path prefixPath = stringToPath(this.pathString).subpath(0, otherLen);
+            java.nio.file.Path otherPrefixPath = stringToPath(other.pathString).subpath(0, otherLen);
+
+            return prefixPath.equals(otherPrefixPath);
+
+        }
+        return false;
     }
 
     /** Converts the path to <code>File</code> object.
@@ -183,6 +218,8 @@ public class Path implements Iterable<String>, Comparable<Path>, Serializable
                     to this directory.
         @return The <code>File</code> object.
      */
+
+    // refer. no clue how to do this.
     public File toFile(File root)
     {
         throw new UnsupportedOperationException("not implemented");
