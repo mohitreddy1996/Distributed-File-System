@@ -68,8 +68,8 @@
       <file leaf-file-name="Skeleton.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rmi/Skeleton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="212" column="51" selection-start-line="212" selection-start-column="51" selection-end-line="212" selection-end-column="51" />
+            <state relative-caret-position="412">
+              <caret line="324" column="35" selection-start-line="324" selection-start-column="35" selection-end-line="324" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#Skeleton#0" expanded="true" />
@@ -77,13 +77,26 @@
                 <element signature="method#Skeleton#1;class#Skeleton#0" expanded="true" />
                 <element signature="docComment;method#stopped#0;class#Skeleton#0" expanded="true" />
                 <element signature="method#stopped#0;class#Skeleton#0" expanded="true" />
-                <element signature="e#4932#4971#0" expanded="true" />
+                <element signature="e#5110#5149#0" expanded="true" />
                 <element signature="docComment;method#listen_error#0;class#Skeleton#0" expanded="true" />
                 <element signature="method#listen_error#0;class#Skeleton#0" expanded="true" />
                 <element signature="method#service_error#0;class#Skeleton#0" expanded="true" />
                 <element signature="docComment;method#start#0;class#Skeleton#0" expanded="true" />
                 <element signature="method#start#0;class#Skeleton#0" expanded="true" />
+                <element signature="class#Listener#0;class#Skeleton#0" expanded="true" />
                 <element signature="method#Listener#0;class#Listener#0;class#Skeleton#0" expanded="true" />
+                <element signature="method#run#0;class#Listener#0;class#Skeleton#0" expanded="true" />
+                <element signature="e#8849#8881#0" expanded="true" />
+                <element signature="class#ClientHandler#0;class#Skeleton#0" expanded="true" />
+                <element signature="method#ClientHandler#0;class#ClientHandler#0;class#Skeleton#0" expanded="true" />
+                <element signature="e#9822#9823#0" expanded="true" />
+                <element signature="e#9878#9879#0" expanded="true" />
+                <element signature="method#run#0;class#ClientHandler#0;class#Skeleton#0" expanded="true" />
+                <element signature="e#9938#9975#0" expanded="true" />
+                <element signature="e#11086#11097#0" expanded="true" />
+                <element signature="docComment;method#stop#0;class#Skeleton#0" expanded="true" />
+                <element signature="e#12481#12482#0" expanded="true" />
+                <element signature="e#12555#12556#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -771,8 +784,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rmi/Skeleton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="212" column="51" selection-start-line="212" selection-start-column="51" selection-end-line="212" selection-end-column="51" />
+        <state relative-caret-position="412">
+          <caret line="324" column="35" selection-start-line="324" selection-start-column="35" selection-end-line="324" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#Skeleton#0" expanded="true" />
@@ -780,13 +793,26 @@
             <element signature="method#Skeleton#1;class#Skeleton#0" expanded="true" />
             <element signature="docComment;method#stopped#0;class#Skeleton#0" expanded="true" />
             <element signature="method#stopped#0;class#Skeleton#0" expanded="true" />
-            <element signature="e#4932#4971#0" expanded="true" />
+            <element signature="e#5110#5149#0" expanded="true" />
             <element signature="docComment;method#listen_error#0;class#Skeleton#0" expanded="true" />
             <element signature="method#listen_error#0;class#Skeleton#0" expanded="true" />
             <element signature="method#service_error#0;class#Skeleton#0" expanded="true" />
             <element signature="docComment;method#start#0;class#Skeleton#0" expanded="true" />
             <element signature="method#start#0;class#Skeleton#0" expanded="true" />
+            <element signature="class#Listener#0;class#Skeleton#0" expanded="true" />
             <element signature="method#Listener#0;class#Listener#0;class#Skeleton#0" expanded="true" />
+            <element signature="method#run#0;class#Listener#0;class#Skeleton#0" expanded="true" />
+            <element signature="e#8849#8881#0" expanded="true" />
+            <element signature="class#ClientHandler#0;class#Skeleton#0" expanded="true" />
+            <element signature="method#ClientHandler#0;class#ClientHandler#0;class#Skeleton#0" expanded="true" />
+            <element signature="e#9822#9823#0" expanded="true" />
+            <element signature="e#9878#9879#0" expanded="true" />
+            <element signature="method#run#0;class#ClientHandler#0;class#Skeleton#0" expanded="true" />
+            <element signature="e#9938#9975#0" expanded="true" />
+            <element signature="e#11086#11097#0" expanded="true" />
+            <element signature="docComment;method#stop#0;class#Skeleton#0" expanded="true" />
+            <element signature="e#12481#12482#0" expanded="true" />
+            <element signature="e#12555#12556#0" expanded="true" />
           </folding>
         </state>
       </provider>

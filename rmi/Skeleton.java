@@ -1,8 +1,13 @@
 package rmi;
 
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
+import java.net.Socket;
 
 /** RMI skeleton
 
@@ -214,7 +219,96 @@ public class Skeleton<T>
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
+                } catch (Exception e){
+                    if(isStarted){
+                        listen_error(e);
+                    }
                 }
+            }
+
+            // accept the incoming messages.
+            // run a new thread on each arrival on the server socket.
+            while(true){
+                try {
+                    Socket socket = Skeleton.this.serverSocket.accept();
+                    // create another runnable for this.
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (Exception e){
+                    if(isStarted){
+                       listen_error(e);
+                    }
+                }
+                synchronized (Skeleton.this){
+                    if (!isStarted){
+                        return;
+                    }
+                }
+            }
+        }
+    }
+
+
+    // runnable for accepting client requests.
+    private class ClientHandler implements Runnable{
+
+        private Socket clientSocket;
+
+        public ClientHandler (){
+            // default constructor
+        }
+
+        public ClientHandler (Socket clientSocket){
+            this.clientSocket = clientSocket;
+        }
+        @Override
+        public void run() {
+            // need to invoke the remote methods.
+            // https://docs.oracle.com/javase/tutorial/reflect/member/method.html
+
+            // https://docs.oracle.com/javase/7/docs/api/java/io/ObjectOutputStream.html
+            ObjectInputStream inputStream = null;
+            ObjectOutputStream outputStream = null;
+            Method method = null;
+
+            try {
+                outputStream = new ObjectOutputStream(clientSocket.getOutputStream());
+                outputStream.flush();
+                inputStream = new ObjectInputStream(clientSocket.getInputStream());
+                // get the arguments for invoke.
+                Object[] args = (Object[]) inputStream.readObject();
+                // get method name.
+                String methodName = (String) inputStream.readObject();
+                // get parameter types
+                Class<?> parameterTypes = (Class<?>) inputStream.readObject();
+
+                method = c.getMethod(methodName, parameterTypes);
+                if (method != null){
+                    // invoke the method.
+                    Object result = method.invoke(server, args);
+                    // Success.
+                    // Todo: Should we send a success result?
+                    outputStream.writeObject(result);
+                    clientSocket.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (NoSuchMethodException e) {
+                e.printStackTrace();
+            } catch (InvocationTargetException e) {
+                try {
+                    outputStream.writeObject(e.getCause());
+                    // Todo : Should we send a failure result?
+                    outputStream.close();
+                } catch (IOException e1) {
+                    service_error(new RMIException(e1));
+                }
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
             }
         }
     }
