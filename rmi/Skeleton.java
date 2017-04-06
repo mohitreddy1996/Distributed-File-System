@@ -67,6 +67,9 @@ public class Skeleton<T>
         }
 
         // must implement remote interfaces. ToDo: Not sure. following comments above.
+        if (!isRemoteInterface(c)){
+            throw new Error("Remote interface encountered");
+        }
 
         if (null == c){
             throw new NullPointerException("Class given as null");
@@ -232,7 +235,8 @@ public class Skeleton<T>
                 try {
                     Socket socket = Skeleton.this.serverSocket.accept();
                     // create another runnable for this.
-
+                    Thread thread = new Thread(new ClientHandler(socket));
+                    thread.start();
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (Exception e){
@@ -324,6 +328,43 @@ public class Skeleton<T>
      */
     public synchronized void stop()
     {
-        throw new UnsupportedOperationException("not implemented");
+        // already stopped;
+        if (!isStarted){
+            return;
+        }
+
+        // close the socket.
+        isStarted = false;
+
+        try {
+            this.serverSocket.close();
+        } catch (IOException e) {
+            isStarted = true;
+            e.printStackTrace();
+        }
+
+    }
+
+    // return socket address
+    public InetSocketAddress getSocketAddress (){
+        return this.address;
+    }
+
+    // referred. Could not figure how to do it :(
+    public static boolean isRemoteInterface (Class<?> c){
+        for (Method method : c.getMethods()) {
+            boolean ok = false;
+            for (Class<?> e : method.getExceptionTypes()){
+                if (e.equals(RMIException.class)) {
+                    ok = true;
+                    break;
+                }
+            }
+
+            if (!ok){
+                return false;
+            }
+        }
+        return true;
     }
 }

@@ -17,7 +17,7 @@ import java.net.*;
  */
 public abstract class Stub
 {
-    /** Creates a stub, given a skeleton with an assigned adress.
+    /** Creates a stub, given a skeleton with an assigned address.
 
         <p>
         The stub is assigned the address of the skeleton. The skeleton must
@@ -48,7 +48,11 @@ public abstract class Stub
     public static <T> T create(Class<T> c, Skeleton<T> skeleton)
         throws UnknownHostException
     {
-        throw new UnsupportedOperationException("not implemented");
+        InetSocketAddress socketAddress = skeleton.getSocketAddress();
+        if (socketAddress == null){
+            throw new IllegalStateException("Skeleton is not assigned any address");
+        }
+        return create(c, socketAddress);
     }
 
     /** Creates a stub, given a skeleton with an assigned address and a hostname
@@ -84,7 +88,7 @@ public abstract class Stub
     public static <T> T create(Class<T> c, Skeleton<T> skeleton,
                                String hostname)
     {
-        throw new UnsupportedOperationException("not implemented");
+        
     }
 
     /** Creates a stub, given the address of a remote server.
