@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79232ab4-55ec-4212-a6fc-2faaf6a81c1e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rmi/Skeleton.java" afterPath="$PROJECT_DIR$/rmi/Skeleton.java" />
     </list>
     <ignored path="Distributed File System.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,16 +68,22 @@
       <file leaf-file-name="Skeleton.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rmi/Skeleton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="119" column="4" selection-start-line="119" selection-start-column="4" selection-end-line="119" selection-end-column="4" />
+            <state relative-caret-position="358">
+              <caret line="212" column="51" selection-start-line="212" selection-start-column="51" selection-end-line="212" selection-end-column="51" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="docComment;class#Skeleton#0" expanded="true" />
                 <element signature="method#Skeleton#0;class#Skeleton#0" expanded="true" />
                 <element signature="method#Skeleton#1;class#Skeleton#0" expanded="true" />
                 <element signature="docComment;method#stopped#0;class#Skeleton#0" expanded="true" />
                 <element signature="method#stopped#0;class#Skeleton#0" expanded="true" />
-                <element signature="e#4706#4745#0" expanded="true" />
+                <element signature="e#4932#4971#0" expanded="true" />
                 <element signature="docComment;method#listen_error#0;class#Skeleton#0" expanded="true" />
+                <element signature="method#listen_error#0;class#Skeleton#0" expanded="true" />
+                <element signature="method#service_error#0;class#Skeleton#0" expanded="true" />
+                <element signature="docComment;method#start#0;class#Skeleton#0" expanded="true" />
+                <element signature="method#start#0;class#Skeleton#0" expanded="true" />
+                <element signature="method#Listener#0;class#Listener#0;class#Skeleton#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -765,16 +771,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rmi/Skeleton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="119" column="4" selection-start-line="119" selection-start-column="4" selection-end-line="119" selection-end-column="4" />
+        <state relative-caret-position="358">
+          <caret line="212" column="51" selection-start-line="212" selection-start-column="51" selection-end-line="212" selection-end-column="51" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="docComment;class#Skeleton#0" expanded="true" />
             <element signature="method#Skeleton#0;class#Skeleton#0" expanded="true" />
             <element signature="method#Skeleton#1;class#Skeleton#0" expanded="true" />
             <element signature="docComment;method#stopped#0;class#Skeleton#0" expanded="true" />
             <element signature="method#stopped#0;class#Skeleton#0" expanded="true" />
-            <element signature="e#4706#4745#0" expanded="true" />
+            <element signature="e#4932#4971#0" expanded="true" />
             <element signature="docComment;method#listen_error#0;class#Skeleton#0" expanded="true" />
+            <element signature="method#listen_error#0;class#Skeleton#0" expanded="true" />
+            <element signature="method#service_error#0;class#Skeleton#0" expanded="true" />
+            <element signature="docComment;method#start#0;class#Skeleton#0" expanded="true" />
+            <element signature="method#start#0;class#Skeleton#0" expanded="true" />
+            <element signature="method#Listener#0;class#Listener#0;class#Skeleton#0" expanded="true" />
           </folding>
         </state>
       </provider>

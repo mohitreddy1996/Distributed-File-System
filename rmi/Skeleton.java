@@ -1,6 +1,8 @@
 package rmi;
 
-import java.net.*;
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.net.ServerSocket;
 
 /** RMI skeleton
 
@@ -29,6 +31,10 @@ public class Skeleton<T>
     private T server;
     private Class<T> c;
     private InetSocketAddress address;
+    // Flag to make sure start is called only once.
+    private boolean isStarted = false;
+    // ToDo: not sure
+    private ServerSocket serverSocket;
     /** Creates a <code>Skeleton</code> with no initial server address. The
         address will be determined by the system when <code>start</code> is
         called. Equivalent to using <code>Skeleton(null)</code>.
@@ -134,6 +140,7 @@ public class Skeleton<T>
      */
     protected boolean listen_error(Exception exception)
     {
+        // Never called anywhere internally.
         return false;
     }
 
@@ -146,6 +153,7 @@ public class Skeleton<T>
      */
     protected void service_error(RMIException exception)
     {
+        // Never called anywhere internally.
     }
 
     /** Starts the skeleton server.
@@ -163,7 +171,52 @@ public class Skeleton<T>
      */
     public synchronized void start() throws RMIException
     {
-        throw new UnsupportedOperationException("not implemented");
+        // This is a single threaded operation. So keep a flag.
+        if (isStarted){
+            // skeleton is already started.
+            return;
+        }
+        // create a thread whenever start is called.
+        Listener listener = new Listener();
+        Thread thread = new Thread(listener);
+        isStarted = true;
+        try{
+            thread.start();
+            wait();
+        } catch (InterruptedException e) {
+            isStarted = false;
+            e.printStackTrace();
+        } catch (Exception e){
+            isStarted = false;
+
+        }
+    }
+
+    private class Listener implements Runnable {
+        // Thread Handler.
+        Listener(){
+            // Listener object created.
+        }
+        // https://docs.oracle.com/javase/tutorial/essential/concurrency/syncmeth.html
+        @Override
+        public void run() {
+            // Listener started running.
+            synchronized (Skeleton.this) {
+                // notify all the threads that execution can start again.
+                Skeleton.this.notifyAll();
+                try{
+                    if (address == null){
+                        serverSocket = new ServerSocket(0);
+                        address = (InetSocketAddress) serverSocket.getLocalSocketAddress();
+                    }else{
+                        serverSocket = new ServerSocket();
+                        serverSocket.bind(address);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     /** Stops the skeleton server, if it is already running.
