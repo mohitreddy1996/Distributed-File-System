@@ -1,11 +1,17 @@
 package storage;
 
-import java.io.*;
-import java.net.*;
+import common.Path;
+import naming.Registration;
+import rmi.RMIException;
+import rmi.Skeleton;
+import rmi.Stub;
 
-import common.*;
-import rmi.*;
-import naming.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.net.InetSocketAddress;
+import java.net.UnknownHostException;
 
 /** Storage server.
 
@@ -16,6 +22,14 @@ import naming.*;
  */
 public class StorageServer implements Storage, Command
 {
+    private File root;
+    private int client_port;
+    private int command_port;
+    private Skeleton<Command> commandSkeleton = null;
+    private Skeleton<Storage> storageSkeleton = null;
+    // flag to check for only one execution.
+    private boolean started = false;
+    private boolean stopped = false;
     /** Creates a storage server, given a directory on the local filesystem, and
         ports to use for the client and command interfaces.
 
@@ -33,7 +47,12 @@ public class StorageServer implements Storage, Command
     */
     public StorageServer(File root, int client_port, int command_port)
     {
-        throw new UnsupportedOperationException("not implemented");
+        if (root == null){
+            throw new NullPointerException("Root can not be null");
+        }
+        this.root = root;
+        this.client_port = client_port;
+        this.command_port = command_port;
     }
 
     /** Creats a storage server, given a directory on the local filesystem.
@@ -49,7 +68,7 @@ public class StorageServer implements Storage, Command
      */
     public StorageServer(File root)
     {
-        throw new UnsupportedOperationException("not implemented");
+        this(root, 0, 0);
     }
 
     /** Starts the storage server and registers it with the given naming
@@ -75,7 +94,39 @@ public class StorageServer implements Storage, Command
     public synchronized void start(String hostname, Registration naming_server)
         throws RMIException, UnknownHostException, FileNotFoundException
     {
-        throw new UnsupportedOperationException("not implemented");
+        // create command and client interface.
+        if (started){
+            throw new RMIException("Storage Server is already started");
+        }
+        if (stopped){
+            throw new RMIException("Storage Server was stopped already.");
+        }
+
+        // create the skeletons.
+        if (this.client_port == 0){
+            storageSkeleton = new Skeleton<Storage>(Storage.class, this);
+        }else{
+            storageSkeleton = new Skeleton<Storage>(Storage.class, this, new InetSocketAddress(client_port));
+        }
+
+        if (this.command_port == 0){
+            commandSkeleton = new Skeleton<Command>(Command.class, this);
+        }else{
+            commandSkeleton = new Skeleton<Command>(Command.class, this, new InetSocketAddress(command_port));
+        }
+
+        // start them and create stubs.
+        storageSkeleton.start();
+        commandSkeleton.start();
+
+        Storage storageStub = Stub.create(Storage.class, storageSkeleton, hostname);
+        Command commandStub = Stub.create(Command.class, commandSkeleton, hostname);
+
+        // ToDo: How to get the paths.
+
+        // Register to the name server.
+        Path[] duplicates = naming_server.register(storageStub, commandStub, new Path[] {});
+
     }
 
     /** Stops the storage server.
@@ -85,7 +136,17 @@ public class StorageServer implements Storage, Command
      */
     public void stop()
     {
-        throw new UnsupportedOperationException("not implemented");
+        synchronized (this){
+            stopped = true;
+        }
+
+        storageSkeleton.stop();
+        commandSkeleton.stop();
+        synchronized (this){
+            started = false;
+            stopped = false;
+        }
+        stopped(null);
     }
 
     /** Called when the storage server has shut down.
@@ -101,14 +162,43 @@ public class StorageServer implements Storage, Command
     @Override
     public synchronized long size(Path file) throws FileNotFoundException
     {
-        throw new UnsupportedOperationException("not implemented");
+        File requiredFile = file.toFile(root);
+        if (requiredFile.isDirectory() || requiredFile.exists() == false){
+            throw new FileNotFoundException("File is either a directory or File not found");
+        }
+        // size not function like that.
+        return requiredFile.length();
     }
 
     @Override
     public synchronized byte[] read(Path file, long offset, int length)
         throws FileNotFoundException, IOException
     {
-        throw new UnsupportedOperationException("not implemented");
+        File requiredFile = file.toFile(root);
+
+        // check if it exists.
+        if (requiredFile.isDirectory() || requiredFile.exists() == false){
+            throw new FileNotFoundException("Input either a directory or File not found");
+        }
+
+        // check if it can be read.
+        if (requiredFile.canRead()){
+            throw new IOException("File not readable.");
+        }
+
+        if (offset < 0 || offset + length > requiredFile.length() || length < 0){
+            throw new IndexOutOfBoundsException("Offset Negative or Lenght given is negative or Length + offset exceeds file length");
+        }
+
+        // Use Random access File Reader.
+        RandomAccessFile randomAccessFile = new RandomAccessFile(requiredFile, "r");
+
+        byte[] data = new byte[length];
+        randomAccessFile.seek(offset);
+        // offset = 0. seek is already done before.
+        randomAccessFile.readFully(data, 0, length);
+
+        return data;
     }
 
     @Override

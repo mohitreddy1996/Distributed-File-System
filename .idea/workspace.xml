@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79232ab4-55ec-4212-a6fc-2faaf6a81c1e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rmi/Skeleton.java" afterPath="$PROJECT_DIR$/rmi/Skeleton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rmi/Stub.java" afterPath="$PROJECT_DIR$/rmi/Stub.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/StorageServer.java" afterPath="$PROJECT_DIR$/storage/StorageServer.java" />
     </list>
     <ignored path="Distributed File System.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,121 +23,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Command.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage/Command.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="docComment;method#create#0;class#Command#0" expanded="true" />
-                <element signature="docComment;method#delete#0;class#Command#0" expanded="true" />
-                <element signature="docComment;method#copy#0;class#Command#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RMIException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rmi/RMIException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
-              <folding>
-                <element signature="e#206#207#0" expanded="true" />
-                <element signature="e#236#237#0" expanded="true" />
-                <element signature="e#399#400#0" expanded="true" />
-                <element signature="e#436#437#0" expanded="true" />
-                <element signature="e#554#555#0" expanded="true" />
-                <element signature="e#582#583#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Stub.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/rmi/Stub.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="170" column="45" selection-start-line="170" selection-start-column="45" selection-end-line="170" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="docComment;class#Stub#0" expanded="true" />
-                <element signature="docComment;method#create#0;class#Stub#0" expanded="true" />
-                <element signature="method#create#0;class#Stub#0" expanded="true" />
-                <element signature="method#create#1;class#Stub#0" expanded="true" />
-                <element signature="docComment;method#create#2;class#Stub#0" expanded="true" />
-                <element signature="method#create#2;class#Stub#0" expanded="true" />
-                <element signature="e#6456#6529#0" expanded="true" />
-                <element signature="method#StubHandler#0;class#StubHandler#0;class#Stub#0" expanded="true" />
-                <element signature="method#StubHandler#1;class#StubHandler#0;class#Stub#0" expanded="true" />
-                <element signature="method#isRemoteMethod#0;class#StubHandler#0;class#Stub#0" expanded="true" />
-                <element signature="method#remoteProcedureInvocation#0;class#StubHandler#0;class#Stub#0" expanded="true" />
-                <element signature="e#8598#8647#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Skeleton.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rmi/Skeleton.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4660">
-              <caret line="330" column="9" selection-start-line="330" selection-start-column="9" selection-end-line="330" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="docComment;class#Skeleton#0" expanded="true" />
-                <element signature="method#Skeleton#0;class#Skeleton#0" expanded="true" />
-                <element signature="method#Skeleton#1;class#Skeleton#0" expanded="true" />
-                <element signature="docComment;method#stopped#0;class#Skeleton#0" expanded="true" />
-                <element signature="method#stopped#0;class#Skeleton#0" expanded="true" />
-                <element signature="e#5296#5335#0" expanded="true" />
-                <element signature="docComment;method#listen_error#0;class#Skeleton#0" expanded="true" />
-                <element signature="method#listen_error#0;class#Skeleton#0" expanded="true" />
-                <element signature="method#service_error#0;class#Skeleton#0" expanded="true" />
-                <element signature="docComment;method#start#0;class#Skeleton#0" expanded="true" />
-                <element signature="method#start#0;class#Skeleton#0" expanded="true" />
-                <element signature="class#Listener#0;class#Skeleton#0" expanded="true" />
-                <element signature="method#Listener#0;class#Listener#0;class#Skeleton#0" expanded="true" />
-                <element signature="method#run#0;class#Listener#0;class#Skeleton#0" expanded="true" />
-                <element signature="e#9035#9067#0" expanded="true" />
-                <element signature="method#ClientHandler#0;class#ClientHandler#0;class#Skeleton#0" expanded="true" />
-                <element signature="e#10118#10119#0" expanded="true" />
-                <element signature="e#10174#10175#0" expanded="true" />
-                <element signature="method#run#0;class#ClientHandler#0;class#Skeleton#0" expanded="true" />
-                <element signature="e#10234#10271#0" expanded="true" />
-                <element signature="e#11382#11393#0" expanded="true" />
-                <element signature="docComment;method#stop#0;class#Skeleton#0" expanded="true" />
-                <element signature="method#stop#0;class#Skeleton#0" expanded="true" />
-                <element signature="e#13579#13580#0" expanded="true" />
-                <element signature="e#13614#13615#0" expanded="true" />
-                <element signature="method#isRemoteInterface#0;class#Skeleton#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SampleClassUnderTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rmi/SampleClassUnderTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-              <folding>
-                <element signature="docComment;method#triple#0;class#SampleClassUnderTest#0" expanded="true" />
-                <element signature="e#991#992#0" expanded="true" />
-                <element signature="e#1019#1020#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StorageServer.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="StorageServer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/storage/StorageServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+            <state relative-caret-position="34">
+              <caret line="200" column="20" selection-start-line="200" selection-start-column="20" selection-end-line="200" selection-end-column="20" />
               <folding>
                 <element signature="docComment;method#StorageServer#0;class#StorageServer#0" expanded="true" />
+                <element signature="method#StorageServer#0;class#StorageServer#0" expanded="true" />
+                <element signature="docComment;method#StorageServer#1;class#StorageServer#0" expanded="true" />
+                <element signature="e#2550#2551#0" expanded="true" />
+                <element signature="e#2582#2583#0" expanded="true" />
+                <element signature="docComment;method#start#0;class#StorageServer#0" expanded="true" />
+                <element signature="method#start#0;class#StorageServer#0" expanded="true" />
+                <element signature="e#5019#5049#0" expanded="true" />
+                <element signature="method#stop#0;class#StorageServer#0" expanded="true" />
+                <element signature="method#stopped#0;class#StorageServer#0" expanded="true" />
+                <element signature="method#size#0;class#StorageServer#0" expanded="true" />
+                <element signature="e#7202#7205#0" expanded="true" />
+                <element signature="e#7381#7382#0" expanded="true" />
                 <element signature="method#write#0;class#StorageServer#0" expanded="true" />
               </folding>
             </state>
@@ -172,6 +75,7 @@
         <option value="$PROJECT_DIR$/rmi/RMIException.java" />
         <option value="$PROJECT_DIR$/rmi/Skeleton.java" />
         <option value="$PROJECT_DIR$/rmi/Stub.java" />
+        <option value="$PROJECT_DIR$/storage/StorageServer.java" />
       </list>
     </option>
   </component>
@@ -740,57 +644,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage/StorageServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-          <folding>
-            <element signature="docComment;method#StorageServer#0;class#StorageServer#0" expanded="true" />
-            <element signature="method#write#0;class#StorageServer#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/Command.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#create#0;class#Command#0" expanded="true" />
-            <element signature="docComment;method#delete#0;class#Command#0" expanded="true" />
-            <element signature="docComment;method#copy#0;class#Command#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rmi/RMIException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
-          <folding>
-            <element signature="e#206#207#0" expanded="true" />
-            <element signature="e#236#237#0" expanded="true" />
-            <element signature="e#399#400#0" expanded="true" />
-            <element signature="e#436#437#0" expanded="true" />
-            <element signature="e#554#555#0" expanded="true" />
-            <element signature="e#582#583#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rmi/SampleClassUnderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-          <folding>
-            <element signature="docComment;method#triple#0;class#SampleClassUnderTest#0" expanded="true" />
-            <element signature="e#991#992#0" expanded="true" />
-            <element signature="e#1019#1020#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rmi/Skeleton.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4660">
@@ -845,6 +698,69 @@
             <element signature="method#isRemoteMethod#0;class#StubHandler#0;class#Stub#0" expanded="true" />
             <element signature="method#remoteProcedureInvocation#0;class#StubHandler#0;class#Stub#0" expanded="true" />
             <element signature="e#8598#8647#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rmi/RMIException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+          <folding>
+            <element signature="e#206#207#0" expanded="true" />
+            <element signature="e#236#237#0" expanded="true" />
+            <element signature="e#399#400#0" expanded="true" />
+            <element signature="e#436#437#0" expanded="true" />
+            <element signature="e#554#555#0" expanded="true" />
+            <element signature="e#582#583#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/Command.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#create#0;class#Command#0" expanded="true" />
+            <element signature="docComment;method#delete#0;class#Command#0" expanded="true" />
+            <element signature="docComment;method#copy#0;class#Command#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rmi/SampleClassUnderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+          <folding>
+            <element signature="docComment;method#triple#0;class#SampleClassUnderTest#0" expanded="false" />
+            <element signature="e#991#992#0" expanded="false" />
+            <element signature="e#1019#1020#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/StorageServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="200" column="20" selection-start-line="200" selection-start-column="20" selection-end-line="200" selection-end-column="20" />
+          <folding>
+            <element signature="docComment;method#StorageServer#0;class#StorageServer#0" expanded="true" />
+            <element signature="method#StorageServer#0;class#StorageServer#0" expanded="true" />
+            <element signature="docComment;method#StorageServer#1;class#StorageServer#0" expanded="true" />
+            <element signature="e#2550#2551#0" expanded="true" />
+            <element signature="e#2582#2583#0" expanded="true" />
+            <element signature="docComment;method#start#0;class#StorageServer#0" expanded="true" />
+            <element signature="method#start#0;class#StorageServer#0" expanded="true" />
+            <element signature="e#5019#5049#0" expanded="true" />
+            <element signature="method#stop#0;class#StorageServer#0" expanded="true" />
+            <element signature="method#stopped#0;class#StorageServer#0" expanded="true" />
+            <element signature="method#size#0;class#StorageServer#0" expanded="true" />
+            <element signature="e#7202#7205#0" expanded="true" />
+            <element signature="e#7381#7382#0" expanded="true" />
+            <element signature="method#write#0;class#StorageServer#0" expanded="true" />
           </folding>
         </state>
       </provider>
