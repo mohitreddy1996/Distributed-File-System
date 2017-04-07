@@ -1,6 +1,10 @@
 package rmi;
 
-import java.net.*;
+import java.io.Serializable;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.net.InetSocketAddress;
+import java.net.UnknownHostException;
 
 /** RMI stub factory.
 
@@ -88,7 +92,18 @@ public abstract class Stub
     public static <T> T create(Class<T> c, Skeleton<T> skeleton,
                                String hostname)
     {
-        
+        InetSocketAddress socketAddress = skeleton.getSocketAddress();
+        if (socketAddress == null){
+            throw new IllegalStateException("Skeleton is not assigned any address");
+        }
+
+        if (hostname == null){
+            throw new NullPointerException("Hostname cannot be null");
+        }
+
+        socketAddress = new InetSocketAddress(hostname, socketAddress.getPort());
+
+        return create(c, socketAddress);
     }
 
     /** Creates a stub, given the address of a remote server.
@@ -110,6 +125,63 @@ public abstract class Stub
      */
     public static <T> T create(Class<T> c, InetSocketAddress address)
     {
-        throw new UnsupportedOperationException("not implemented");
+        if (c == null){
+            throw new NullPointerException("Class given as input is null");
+        }
+        if (address == null){
+            throw new NullPointerException("Address given as input is null");
+        }
+        if (!c.isInterface()){
+            throw new Error("Class does not implement an interface");
+        }
+
+        if(!Skeleton.isRemoteInterface(c)){
+            throw new Error("No Remote interfaces encountered");
+        }
+
+        // https://docs.oracle.com/javase/6/docs/api/java/lang/reflect/Proxy.html
+        // https://docs.oracle.com/javase/6/docs/api/java/lang/reflect/InvocationHandler.html
+        return (T) java.lang.reflect.Proxy.newProxyInstance(c.getClassLoader(), new Class<?>[] {c}, new StubHandler(c, address));
+
     }
+
+    private static class StubHandler implements InvocationHandler, Serializable
+    {
+        private Class<?> c;
+        private InetSocketAddress address;
+        public StubHandler (){
+
+        }
+
+        public StubHandler (Class<?> c, InetSocketAddress address){
+            this.c = c;
+            this.address = address;
+        }
+        @Override
+        public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
+            if (isRemoteMethod(method)){
+                // Remote Invocation to be made.
+                return remoteProcedureInvocation(o, method, objects);
+            }else{
+                // ToDo : Local methods invocation.
+                // check the outputs of the method.getName()
+
+                return new RMIException(new NoSuchMethodException());
+            }
+        }
+
+        private boolean isRemoteMethod (Method method){
+            for(Method m : c.getMethods()){
+                if (m.equals(method)){
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private Object remoteProcedureInvocation (Object o, Method method, Object[] objects){
+
+        }
+    }
+
 }

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79232ab4-55ec-4212-a6fc-2faaf6a81c1e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rmi/Skeleton.java" afterPath="$PROJECT_DIR$/rmi/Skeleton.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rmi/Stub.java" afterPath="$PROJECT_DIR$/rmi/Stub.java" />
     </list>
     <ignored path="Distributed File System.iws" />
@@ -59,12 +59,22 @@
       <file leaf-file-name="Stub.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rmi/Stub.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="90" column="8" selection-start-line="90" selection-start-column="8" selection-end-line="90" selection-end-column="8" />
+            <state relative-caret-position="106">
+              <caret line="168" column="69" selection-start-line="168" selection-start-column="69" selection-end-line="168" selection-end-column="69" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="docComment;class#Stub#0" expanded="true" />
                 <element signature="docComment;method#create#0;class#Stub#0" expanded="true" />
                 <element signature="method#create#0;class#Stub#0" expanded="true" />
+                <element signature="method#create#1;class#Stub#0" expanded="true" />
+                <element signature="docComment;method#create#2;class#Stub#0" expanded="true" />
+                <element signature="method#create#2;class#Stub#0" expanded="true" />
+                <element signature="e#6331#6404#0" expanded="true" />
+                <element signature="method#StubHandler#0;class#StubHandler#0;class#Stub#0" expanded="true" />
+                <element signature="method#StubHandler#1;class#StubHandler#0;class#Stub#0" expanded="true" />
+                <element signature="e#7279#7314#0" expanded="true" />
+                <element signature="method#isRemoteMethod#0;class#StubHandler#0;class#Stub#0" expanded="true" />
+                <element signature="method#remoteProcedureInvocation#0;class#StubHandler#0;class#Stub#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -73,7 +83,7 @@
       <file leaf-file-name="Skeleton.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rmi/Skeleton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
+            <state relative-caret-position="5760">
               <caret line="348" column="10" selection-start-line="348" selection-start-column="10" selection-end-line="348" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -784,7 +794,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rmi/Skeleton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
+        <state relative-caret-position="5760">
           <caret line="348" column="10" selection-start-line="348" selection-start-column="10" selection-end-line="348" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -821,12 +831,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rmi/Stub.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="90" column="8" selection-start-line="90" selection-start-column="8" selection-end-line="90" selection-end-column="8" />
+        <state relative-caret-position="106">
+          <caret line="168" column="69" selection-start-line="168" selection-start-column="69" selection-end-line="168" selection-end-column="69" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="docComment;class#Stub#0" expanded="true" />
             <element signature="docComment;method#create#0;class#Stub#0" expanded="true" />
             <element signature="method#create#0;class#Stub#0" expanded="true" />
+            <element signature="method#create#1;class#Stub#0" expanded="true" />
+            <element signature="docComment;method#create#2;class#Stub#0" expanded="true" />
+            <element signature="method#create#2;class#Stub#0" expanded="true" />
+            <element signature="e#6331#6404#0" expanded="true" />
+            <element signature="method#StubHandler#0;class#StubHandler#0;class#Stub#0" expanded="true" />
+            <element signature="method#StubHandler#1;class#StubHandler#0;class#Stub#0" expanded="true" />
+            <element signature="e#7279#7314#0" expanded="true" />
+            <element signature="method#isRemoteMethod#0;class#StubHandler#0;class#Stub#0" expanded="true" />
+            <element signature="method#remoteProcedureInvocation#0;class#StubHandler#0;class#Stub#0" expanded="true" />
           </folding>
         </state>
       </provider>
