@@ -9,6 +9,11 @@ import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+// RMIStatus for stub and skeleton.
+enum RMIStatus {
+    OK, RMIExpt, Expt
+};
+
 /** RMI skeleton
 
     <p>
@@ -293,6 +298,7 @@ public class Skeleton<T>
                     Object result = method.invoke(server, args);
                     // Success.
                     // Todo: Should we send a success result?
+                    outputStream.writeObject(RMIStatus.OK);
                     outputStream.writeObject(result);
                     clientSocket.close();
                 }
@@ -301,9 +307,17 @@ public class Skeleton<T>
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             } catch (NoSuchMethodException e) {
+                try {
+                    outputStream.writeObject(RMIStatus.RMIExpt);
+                    outputStream.writeObject(e.getCause());
+                    outputStream.close();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
                 e.printStackTrace();
             } catch (InvocationTargetException e) {
                 try {
+                    outputStream.writeObject(RMIStatus.Expt);
                     outputStream.writeObject(e.getCause());
                     // Todo : Should we send a failure result?
                     outputStream.close();
