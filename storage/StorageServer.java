@@ -290,6 +290,43 @@ public class StorageServer implements Storage, Command
     public synchronized boolean copy(Path file, Storage server)
         throws RMIException, FileNotFoundException, IOException
     {
-        
+        // ToDo: Not sure if this is a move or a copy;
+        // Assuming a move. Removing from existing from current and writing it in a new place.
+        int bufferSize = 2048;
+        File requiredFile = file.toFile(root);
+        if (requiredFile.isDirectory()){
+            throw new FileNotFoundException("Cannot copy a directory");
+        }
+
+        if (requiredFile.exists()){
+            removeChildrenDirs(requiredFile);
+        }
+
+        if (create(file) == false){
+            throw new IOException("cannot create copy file");
+        }
+
+        RandomAccessFile randomAccessFile = new RandomAccessFile(requiredFile, "rw");
+
+        // write the file in buffer sizes of fixed sizes.
+        long fileSize = server.size(file);
+        byte[] fileBuffer;
+        long offset;
+        for(offset = 0; offset + bufferSize <= fileSize; offset+=bufferSize){
+            // read from the server and write to the local file.
+            fileBuffer = server.read(file, offset, bufferSize);
+            randomAccessFile.write(fileBuffer);
+        }
+
+        int remaining = (int) (fileSize%bufferSize);
+        if (remaining > 0){
+            fileBuffer = server.read(file, offset, remaining);
+            randomAccessFile.write(fileBuffer);
+        }
+
+        randomAccessFile.close();
+
+        return true;
+
     }
 }
