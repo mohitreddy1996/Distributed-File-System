@@ -205,26 +205,91 @@ public class StorageServer implements Storage, Command
     public synchronized void write(Path file, long offset, byte[] data)
         throws FileNotFoundException, IOException
     {
-        throw new UnsupportedOperationException("not implemented");
+        if (file == null || data == null){
+            throw new NullPointerException("File or data given are null");
+        }
+
+        File requiredFile = file.toFile(root);
+        if (requiredFile.isDirectory() || requiredFile.exists() == false){
+            throw new FileNotFoundException("File is either a directory or File does not exist");
+        }
+
+        if (requiredFile.canWrite() == false){
+            throw new IOException("File is not given a write access");
+        }
+
+        if (offset < 0){
+            throw new IndexOutOfBoundsException("Offset given negative");
+        }
+
+        RandomAccessFile randomAccessFile = new RandomAccessFile(requiredFile, "rw");
+        randomAccessFile.seek(offset);
+        randomAccessFile.write(data, 0, (int) requiredFile.length());
     }
 
     // The following methods are documented in Command.java.
     @Override
     public synchronized boolean create(Path file)
     {
-        throw new UnsupportedOperationException("not implemented");
+        // get the parent file.
+        // Make directory for that and create a nre file
+
+        File requiredFile = file.toFile(root);
+        File parent = requiredFile.getParentFile();
+
+        parent.mkdirs();
+        try {
+            return requiredFile.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     @Override
     public synchronized boolean delete(Path path)
     {
-        throw new UnsupportedOperationException("not implemented");
+        File requiredFile = path.toFile(root);
+
+        // if the path given is a directory, delete all the files in that directory and then delete the parent.
+        boolean status = false;
+        status = removeChildrenDirs (requiredFile);
+        if (status){
+            removeParent (requiredFile.getParentFile());
+        }
+        return status;
+    }
+
+    private boolean removeChildrenDirs (File requiredFile){
+        if (requiredFile.isDirectory()){
+            File[] list = requiredFile.listFiles();
+            assert list != null;
+            for (File f : list){
+                removeChildrenDirs(f);
+            }
+        }
+        boolean status = false;
+        status = requiredFile.delete();
+        return status;
+    }
+
+    private void removeParent (File requiredFile){
+        if (requiredFile == root){
+            return;
+        }
+        // once all the files are delete then only delete the parent directory.
+        File[] list = requiredFile.listFiles();
+        if (list.length == 0){
+            File parent = requiredFile.getParentFile();
+            requiredFile.delete();
+            removeParent(parent);
+        }
     }
 
     @Override
     public synchronized boolean copy(Path file, Storage server)
         throws RMIException, FileNotFoundException, IOException
     {
-        throw new UnsupportedOperationException("not implemented");
+        
     }
 }

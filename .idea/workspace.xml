@@ -26,8 +26,8 @@
       <file leaf-file-name="StorageServer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/storage/StorageServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="200" column="20" selection-start-line="200" selection-start-column="20" selection-end-line="200" selection-end-column="20" />
+            <state relative-caret-position="448">
+              <caret line="292" column="8" selection-start-line="292" selection-start-column="8" selection-end-line="292" selection-end-column="8" />
               <folding>
                 <element signature="docComment;method#StorageServer#0;class#StorageServer#0" expanded="true" />
                 <element signature="method#StorageServer#0;class#StorageServer#0" expanded="true" />
@@ -40,20 +40,53 @@
                 <element signature="method#stop#0;class#StorageServer#0" expanded="true" />
                 <element signature="method#stopped#0;class#StorageServer#0" expanded="true" />
                 <element signature="method#size#0;class#StorageServer#0" expanded="true" />
+                <element signature="method#read#0;class#StorageServer#0" expanded="true" />
                 <element signature="e#7202#7205#0" expanded="true" />
                 <element signature="e#7381#7382#0" expanded="true" />
                 <element signature="method#write#0;class#StorageServer#0" expanded="true" />
+                <element signature="e#8242#8246#0" expanded="true" />
+                <element signature="e#8325#8326#0" expanded="true" />
+                <element signature="method#create#0;class#StorageServer#0" expanded="true" />
+                <element signature="e#8504#8527#0" expanded="true" />
+                <element signature="method#delete#0;class#StorageServer#0" expanded="true" />
+                <element signature="method#removeChildrenDirs#0;class#StorageServer#0" expanded="true" />
+                <element signature="method#removeParent#0;class#StorageServer#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Storage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage/Storage.java">
+      <file leaf-file-name="Skeleton.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rmi/Skeleton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="8249">
+              <caret line="366" column="13" selection-start-line="366" selection-start-column="13" selection-end-line="366" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#Skeleton#0" expanded="true" />
+                <element signature="method#Skeleton#0;class#Skeleton#0" expanded="true" />
+                <element signature="method#Skeleton#1;class#Skeleton#0" expanded="true" />
+                <element signature="docComment;method#stopped#0;class#Skeleton#0" expanded="true" />
+                <element signature="method#stopped#0;class#Skeleton#0" expanded="true" />
+                <element signature="e#5296#5335#0" expanded="true" />
+                <element signature="docComment;method#listen_error#0;class#Skeleton#0" expanded="true" />
+                <element signature="method#listen_error#0;class#Skeleton#0" expanded="true" />
+                <element signature="method#service_error#0;class#Skeleton#0" expanded="true" />
+                <element signature="docComment;method#start#0;class#Skeleton#0" expanded="true" />
+                <element signature="method#start#0;class#Skeleton#0" expanded="true" />
+                <element signature="class#Listener#0;class#Skeleton#0" expanded="true" />
+                <element signature="method#Listener#0;class#Listener#0;class#Skeleton#0" expanded="true" />
+                <element signature="method#run#0;class#Listener#0;class#Skeleton#0" expanded="true" />
+                <element signature="e#9035#9067#0" expanded="true" />
+                <element signature="class#ClientHandler#0;class#Skeleton#0" expanded="true" />
+                <element signature="method#ClientHandler#0;class#ClientHandler#0;class#Skeleton#0" expanded="true" />
+                <element signature="method#run#0;class#ClientHandler#0;class#Skeleton#0" expanded="true" />
+                <element signature="e#10234#10271#0" expanded="true" />
+                <element signature="e#11382#11393#0" expanded="true" />
+                <element signature="docComment;method#stop#0;class#Skeleton#0" expanded="true" />
+                <element signature="method#stop#0;class#Skeleton#0" expanded="true" />
+                <element signature="method#isRemoteInterface#0;class#Skeleton#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,6 +124,28 @@
     <option name="y" value="46" />
     <option name="width" value="662" />
     <option name="height" value="722" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Probable bugsJava</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>IgnoreResultOfCall</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -399,7 +454,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41290322" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44193548" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="ConsoleMavenPlugin" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -509,46 +564,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/Path.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8532">
-          <caret line="309" column="31" selection-start-line="309" selection-start-column="31" selection-end-line="309" selection-end-column="31" />
-          <folding>
-            <element signature="docComment;class#Path#0" expanded="false" />
-            <element signature="method#stringToPath#0;class#Path#0" expanded="false" />
-            <element signature="docComment;method#Path#0;class#Path#0" expanded="false" />
-            <element signature="docComment;method#Path#1;class#Path#0" expanded="false" />
-            <element signature="method#Path#1;class#Path#0" expanded="false" />
-            <element signature="docComment;method#emptyPath#0;class#Path#0" expanded="false" />
-            <element signature="method#Path#2;class#Path#0" expanded="false" />
-            <element signature="docComment;method#iterator#0;class#Path#0" expanded="false" />
-            <element signature="method#iterator#0;class#Path#0" expanded="false" />
-            <element signature="docComment;method#list#0;class#Path#0" expanded="false" />
-            <element signature="method#list#0;class#Path#0" expanded="false" />
-            <element signature="method#isRoot#0;class#Path#0" expanded="false" />
-            <element signature="docComment;method#parent#0;class#Path#0" expanded="false" />
-            <element signature="method#parent#0;class#Path#0" expanded="false" />
-            <element signature="docComment;method#last#0;class#Path#0" expanded="false" />
-            <element signature="method#last#0;class#Path#0" expanded="false" />
-            <element signature="docComment;method#isSubpath#0;class#Path#0" expanded="false" />
-            <element signature="method#isSubpath#0;class#Path#0" expanded="false" />
-            <element signature="docComment;method#toFile#0;class#Path#0" expanded="false" />
-            <element signature="e#7422#7423#0" expanded="false" />
-            <element signature="e#7496#7497#0" expanded="false" />
-            <element signature="docComment;method#compareTo#0;class#Path#0" expanded="false" />
-            <element signature="e#9369#9370#0" expanded="false" />
-            <element signature="e#9430#9431#0" expanded="false" />
-            <element signature="docComment;method#equals#0;class#Path#0" expanded="false" />
-            <element signature="method#equals#0;class#Path#0" expanded="false" />
-            <element signature="e#9788#9810#0" expanded="false" />
-            <element signature="e#10096#10097#0" expanded="false" />
-            <element signature="e#10145#10146#0" expanded="false" />
-            <element signature="e#10417#10418#0" expanded="false" />
-            <element signature="e#10455#10456#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/common/package-info.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -574,16 +589,6 @@
           <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
           <folding>
             <element signature="method#main#0;class#PathSeparator#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/naming/NamingServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="91" column="4" selection-start-line="91" selection-start-column="4" selection-end-line="91" selection-end-column="4" />
-          <folding>
-            <element signature="method#lock#0;class#NamingServer#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -632,50 +637,6 @@
             <element signature="docComment;field#EXIT_SUCCESS#0;class#Application#0" expanded="false" />
             <element signature="docComment;field#EXIT_FAILURE#0;class#Application#0" expanded="false" />
             <element signature="docComment;method#run#0;class#Application#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/Storage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rmi/Skeleton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4660">
-          <caret line="330" column="9" selection-start-line="330" selection-start-column="9" selection-end-line="330" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#Skeleton#0" expanded="true" />
-            <element signature="method#Skeleton#0;class#Skeleton#0" expanded="true" />
-            <element signature="method#Skeleton#1;class#Skeleton#0" expanded="true" />
-            <element signature="docComment;method#stopped#0;class#Skeleton#0" expanded="true" />
-            <element signature="method#stopped#0;class#Skeleton#0" expanded="true" />
-            <element signature="e#5296#5335#0" expanded="true" />
-            <element signature="docComment;method#listen_error#0;class#Skeleton#0" expanded="true" />
-            <element signature="method#listen_error#0;class#Skeleton#0" expanded="true" />
-            <element signature="method#service_error#0;class#Skeleton#0" expanded="true" />
-            <element signature="docComment;method#start#0;class#Skeleton#0" expanded="true" />
-            <element signature="method#start#0;class#Skeleton#0" expanded="true" />
-            <element signature="class#Listener#0;class#Skeleton#0" expanded="true" />
-            <element signature="method#Listener#0;class#Listener#0;class#Skeleton#0" expanded="true" />
-            <element signature="method#run#0;class#Listener#0;class#Skeleton#0" expanded="true" />
-            <element signature="e#9035#9067#0" expanded="true" />
-            <element signature="method#ClientHandler#0;class#ClientHandler#0;class#Skeleton#0" expanded="true" />
-            <element signature="e#10118#10119#0" expanded="true" />
-            <element signature="e#10174#10175#0" expanded="true" />
-            <element signature="method#run#0;class#ClientHandler#0;class#Skeleton#0" expanded="true" />
-            <element signature="e#10234#10271#0" expanded="true" />
-            <element signature="e#11382#11393#0" expanded="true" />
-            <element signature="docComment;method#stop#0;class#Skeleton#0" expanded="true" />
-            <element signature="method#stop#0;class#Skeleton#0" expanded="true" />
-            <element signature="e#13579#13580#0" expanded="true" />
-            <element signature="e#13614#13615#0" expanded="true" />
-            <element signature="method#isRemoteInterface#0;class#Skeleton#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -742,10 +703,99 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/naming/Registration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="52" column="26" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naming/Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="882">
+          <caret line="228" column="29" selection-start-line="228" selection-start-column="19" selection-end-line="228" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naming/NamingStubs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naming/NamingServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="91" column="4" selection-start-line="91" selection-start-column="4" selection-end-line="91" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/Storage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/Path.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-175">
+          <caret line="180" column="41" selection-start-line="180" selection-start-column="41" selection-end-line="180" selection-end-column="41" />
+          <folding>
+            <element signature="method#stringToPath#0;class#Path#0" expanded="true" />
+            <element signature="method#Path#2;class#Path#0" expanded="true" />
+            <element signature="docComment;method#list#0;class#Path#0" expanded="true" />
+            <element signature="method#list#0;class#Path#0" expanded="true" />
+            <element signature="method#parent#0;class#Path#0" expanded="true" />
+            <element signature="e#10417#10418#0" expanded="true" />
+            <element signature="e#10455#10456#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rmi/Skeleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8249">
+          <caret line="366" column="13" selection-start-line="366" selection-start-column="13" selection-end-line="366" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#Skeleton#0" expanded="true" />
+            <element signature="method#Skeleton#0;class#Skeleton#0" expanded="true" />
+            <element signature="method#Skeleton#1;class#Skeleton#0" expanded="true" />
+            <element signature="docComment;method#stopped#0;class#Skeleton#0" expanded="true" />
+            <element signature="method#stopped#0;class#Skeleton#0" expanded="true" />
+            <element signature="e#5296#5335#0" expanded="true" />
+            <element signature="docComment;method#listen_error#0;class#Skeleton#0" expanded="true" />
+            <element signature="method#listen_error#0;class#Skeleton#0" expanded="true" />
+            <element signature="method#service_error#0;class#Skeleton#0" expanded="true" />
+            <element signature="docComment;method#start#0;class#Skeleton#0" expanded="true" />
+            <element signature="method#start#0;class#Skeleton#0" expanded="true" />
+            <element signature="class#Listener#0;class#Skeleton#0" expanded="true" />
+            <element signature="method#Listener#0;class#Listener#0;class#Skeleton#0" expanded="true" />
+            <element signature="method#run#0;class#Listener#0;class#Skeleton#0" expanded="true" />
+            <element signature="e#9035#9067#0" expanded="true" />
+            <element signature="class#ClientHandler#0;class#Skeleton#0" expanded="true" />
+            <element signature="method#ClientHandler#0;class#ClientHandler#0;class#Skeleton#0" expanded="true" />
+            <element signature="method#run#0;class#ClientHandler#0;class#Skeleton#0" expanded="true" />
+            <element signature="e#10234#10271#0" expanded="true" />
+            <element signature="e#11382#11393#0" expanded="true" />
+            <element signature="docComment;method#stop#0;class#Skeleton#0" expanded="true" />
+            <element signature="method#stop#0;class#Skeleton#0" expanded="true" />
+            <element signature="method#isRemoteInterface#0;class#Skeleton#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/storage/StorageServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="200" column="20" selection-start-line="200" selection-start-column="20" selection-end-line="200" selection-end-column="20" />
+        <state relative-caret-position="448">
+          <caret line="292" column="8" selection-start-line="292" selection-start-column="8" selection-end-line="292" selection-end-column="8" />
           <folding>
             <element signature="docComment;method#StorageServer#0;class#StorageServer#0" expanded="true" />
             <element signature="method#StorageServer#0;class#StorageServer#0" expanded="true" />
@@ -758,9 +808,17 @@
             <element signature="method#stop#0;class#StorageServer#0" expanded="true" />
             <element signature="method#stopped#0;class#StorageServer#0" expanded="true" />
             <element signature="method#size#0;class#StorageServer#0" expanded="true" />
+            <element signature="method#read#0;class#StorageServer#0" expanded="true" />
             <element signature="e#7202#7205#0" expanded="true" />
             <element signature="e#7381#7382#0" expanded="true" />
             <element signature="method#write#0;class#StorageServer#0" expanded="true" />
+            <element signature="e#8242#8246#0" expanded="true" />
+            <element signature="e#8325#8326#0" expanded="true" />
+            <element signature="method#create#0;class#StorageServer#0" expanded="true" />
+            <element signature="e#8504#8527#0" expanded="true" />
+            <element signature="method#delete#0;class#StorageServer#0" expanded="true" />
+            <element signature="method#removeChildrenDirs#0;class#StorageServer#0" expanded="true" />
+            <element signature="method#removeParent#0;class#StorageServer#0" expanded="true" />
           </folding>
         </state>
       </provider>
