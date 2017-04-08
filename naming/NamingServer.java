@@ -1,12 +1,13 @@
 package naming;
 
-import java.io.*;
-import java.net.*;
-import java.util.*;
+import common.Path;
+import rmi.RMIException;
+import rmi.Skeleton;
+import storage.Command;
+import storage.Storage;
 
-import rmi.*;
-import common.*;
-import storage.*;
+import java.io.FileNotFoundException;
+import java.net.InetSocketAddress;
 
 /** Naming server.
 
@@ -33,6 +34,10 @@ import storage.*;
  */
 public class NamingServer implements Service, Registration
 {
+    private boolean started = false;
+    private boolean stopped = false;
+    private Skeleton<Registration> registrationSkeleton;
+    private Skeleton<Service> serviceSkeleton;
     /** Creates the naming server object.
 
         <p>
@@ -40,7 +45,6 @@ public class NamingServer implements Service, Registration
      */
     public NamingServer()
     {
-        throw new UnsupportedOperationException("not implemented");
     }
 
     /** Starts the naming server.
@@ -56,7 +60,23 @@ public class NamingServer implements Service, Registration
      */
     public synchronized void start() throws RMIException
     {
-        throw new UnsupportedOperationException("not implemented");
+        if (started){
+            throw new RMIException("Naming Server already started");
+        }
+
+        if (stopped){
+            throw new RMIException("Naming Server already stopped");
+        }
+
+        registrationSkeleton = new Skeleton<Registration>(Registration.class, this, new InetSocketAddress(NamingStubs.REGISTRATION_PORT));
+
+        serviceSkeleton = new Skeleton<Service>(Service.class, this, new InetSocketAddress(NamingStubs.SERVICE_PORT));
+        // start the registration and service skeletons.
+        registrationSkeleton.start();
+        serviceSkeleton.start();
+
+        started = true;
+
     }
 
     /** Stops the naming server.
@@ -70,7 +90,20 @@ public class NamingServer implements Service, Registration
      */
     public void stop()
     {
-        throw new UnsupportedOperationException("not implemented");
+        // similar to storage server.
+        synchronized (this){
+            stopped = true;
+        }
+
+        registrationSkeleton.stop();
+        serviceSkeleton.stop();
+        synchronized (this){
+            stopped = false;
+            started = false;
+        }
+        stopped(null);
+
+
     }
 
     /** Indicates that the server has completely shut down.
