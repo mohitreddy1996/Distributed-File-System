@@ -137,7 +137,23 @@ public class Path implements Iterable<String>, Comparable<Path>, Serializable
      */
     public static Path[] list(File directory) throws FileNotFoundException
     {
-        throw new UnsupportedOperationException("not implemented");
+        ArrayList<Path> list = new ArrayList<Path>();
+        makeList(directory,list);
+        return list.toArray();
+    }
+
+    public static void makeList(File directory,ArrayList<Path> list)
+    {
+      if(!directory.isDirectory()){
+        list.add(new Path(directory.toPath().toString()));
+      }
+      else{
+        File[] listFile = directory.listFiles();
+        assert listFile != null;
+        for(File f : listFile){
+          makeList(f,list);
+        }
+      }
     }
 
     /** Determines whether the path represents the root directory.
@@ -222,7 +238,9 @@ public class Path implements Iterable<String>, Comparable<Path>, Serializable
     // refer. no clue how to do this.
     public File toFile(File root)
     {
-        throw new UnsupportedOperationException("not implemented");
+        java.nio.file.Path newPath = root.toPath().resolve(pathString);
+        File requiredFile = newPath.toFile();
+        return requiredFile;
     }
 
     /** Compares this path to another.
