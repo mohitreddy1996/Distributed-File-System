@@ -5,15 +5,22 @@ import rmi.RMIException;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
+
 /**
  * Created by mohit on 12/4/17.
  */
+
+enum OperationMode{
+    CREATEDIR, CREATEFILE, DELETE, ISDIR
+}
+
 public class HashTree {
     private HashNode root;
     private LinkedList<ServerStub> serverStubList;
@@ -135,6 +142,130 @@ public class HashTree {
         return false;
     }
 
+
+    public void unlock (Path path, boolean exclusiveLock)
+    {
+        if (path.isRoot())
+        {
+            if (exclusiveLock)
+            {
+                root.unlockWrite();
+            }
+            else
+            {
+                root.unlockRead();
+            }
+            return;
+        }
+        Iterator<String> iterator = path.iterator();
+        unlockRecursive (root, iterator, exclusiveLock);
+    }
+
+    private void unlockRecursive (HashNode root, Iterator<String> iterator, boolean exclusiveLock)
+    {
+        String nextDir = iterator.next();
+        if (iterator.hasNext())
+        {
+            if(root.hasDirectory(nextDir))
+            {
+                unlockRecursive(root, iterator, exclusiveLock);
+            }
+            else
+            {
+                throw new IllegalArgumentException("Name doest exist in subroot or name is a file in root");
+            }
+        }
+        else
+        {
+            HashNode lastComp = root.getChild(nextDir);
+            if (exclusiveLock)
+            {
+                lastComp.unlockWrite();
+            }
+            else
+            {
+                lastComp.unlockRead();
+            }
+        }
+        root.unlockRead();
+
+    }
+
+    public boolean isDirectory (Path path) throws FileNotFoundException {
+        lock(path.parent(), false);
+        Iterator<String> iterator = path.iterator();
+        boolean flag = nameServerOperator(OperationMode.ISDIR, root, iterator, null);
+        unlock(path.parent(), false);
+        return flag;
+    }
+
+    private boolean nameServerOperator (OperationMode mode, HashNode root, Iterator<String> iterator, ServerStub serverStub) throws FileNotFoundException {
+        return nameServerOperator(mode, root, iterator, serverStub, null);
+    }
+
+    private boolean nameServerOperator (OperationMode mode, HashNode root, Iterator<String> iterator, ServerStub serverStub, Path path) throws FileNotFoundException {
+        if(!iterator.hasNext())
+        {
+            if (mode == OperationMode.CREATEDIR || mode == OperationMode.CREATEFILE || mode == OperationMode.DELETE)
+            {
+                return false;
+            }
+
+            if (mode == OperationMode.ISDIR)
+                return true;
+        }
+
+        String nextDir = iterator.next();
+        if (iterator.hasNext())
+        {
+            return nameServerOperator(mode, root.getChild(nextDir), iterator, serverStub, null);
+        }
+        else
+        {
+            if (mode == OperationMode.ISDIR)
+            {
+                if (root.hasDirectory(nextDir))
+                    return true;
+                if (root.hasFile(nextDir))
+                    return false;
+
+                throw new FileNotFoundException("File not found in the directory in any storage server");
+            }
+            else
+            {
+                if (root.hasDirectory(nextDir) || root.hasFile(nextDir))
+                {
+                    if (mode == OperationMode.DELETE)
+                    {
+                        root.delete (nextDir, path);
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    if (mode == OperationMode.DELETE)
+                    {
+                        return false;
+                    }
+                    else if (mode == OperationMode.CREATEDIR || mode == OperationMode.CREATEFILE)
+                    {
+                        root.create (nextDir, serverStub);
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+        // i guess wont reach here.
+    }
+
     private class HashNode {
         private LinkedList<ServerStub> serverStubList = null;
         private Hashtable<String, HashNode> hashtable = null;
@@ -142,6 +273,11 @@ public class HashTree {
 
         public HashNode() {
             hashtable = new Hashtable<>();
+        }
+
+        public HashNode (ServerStub serverStub)
+        {
+            this.serverStubList.add(serverStub);
         }
 
         public void lockWrite ()
@@ -171,6 +307,63 @@ public class HashTree {
         {
             lock.readLock().unlock();
         }
+
+        public void unlockWrite ()
+        {
+            lock.writeLock().unlock();
+        }
+
+        public boolean hasFile (String filename)
+        {
+            HashNode hashNode = hashtable.get(filename);
+            if (hashNode != null && hashNode.serverStubList != null)
+                return true;
+            return false;
+        }
+
+        public void create(String fileName, ServerStub serverStub)
+        {
+            HashNode node;
+            if (serverStub == null)
+            {
+                node = new HashNode();
+            }
+            else
+            {
+                node = new HashNode(serverStub);
+            }
+            this.hashtable.put(fileName, node);
+
+        }
+
+        public void delete (String filename, Path path)
+        {
+            HashNode child = this.getChild(filename);
+            for (ServerStub serverStub : child.getAllStubs())
+            {
+                try {
+                    serverStub.commandStub.delete(path);
+                } catch (RMIException e) {
+                    e.printStackTrace();
+                }
+            }
+            this.hashtable.remove(filename);
+        }
+
+        public HashSet<ServerStub> getAllStubs ()
+        {
+            if (this.hashtable == null)
+            {
+                return new HashSet<>(this.serverStubList);
+            }
+            HashSet<ServerStub> serverStubs = new HashSet<>();
+            for (String path : this.hashtable.keySet())
+            {
+                serverStubs.addAll(this.hashtable.get(path).getAllStubs());
+            }
+            return serverStubs;
+        }
+
 
     }
 }

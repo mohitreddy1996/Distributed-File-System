@@ -146,13 +146,13 @@ public class NamingServer implements Service, Registration
     @Override
     public void unlock(Path path, boolean exclusive)
     {
-        throw new UnsupportedOperationException("not implemented");
+        hashTree.unlock(path, exclusive);
     }
 
     @Override
     public boolean isDirectory(Path path) throws FileNotFoundException
     {
-        throw new UnsupportedOperationException("not implemented");
+        return hashTree.isDirectory(path);
     }
 
     @Override
