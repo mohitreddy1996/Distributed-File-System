@@ -73,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NamingServer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NamingServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/naming/NamingServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="219" column="36" selection-start-line="219" selection-start-column="36" selection-end-line="219" selection-end-column="36" />
+            <state relative-caret-position="115">
+              <caret line="261" column="62" selection-start-line="261" selection-start-column="41" selection-end-line="261" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#ServerStub#0;class#ServerStub#0" expanded="true" />
@@ -87,20 +87,20 @@
                 <element signature="method#stop#0;class#NamingServer#0" expanded="true" />
                 <element signature="method#stopped#0;class#NamingServer#0" expanded="true" />
                 <element signature="method#lock#0;class#NamingServer#0" expanded="true" />
-                <element signature="e#4907#4908#0" expanded="true" />
-                <element signature="e#4955#4956#0" expanded="true" />
+                <element signature="e#4935#4936#0" expanded="true" />
+                <element signature="e#4983#4984#0" expanded="true" />
                 <element signature="method#isDirectory#0;class#NamingServer#0" expanded="true" />
                 <element signature="method#list#0;class#NamingServer#0" expanded="true" />
                 <element signature="method#createFile#0;class#NamingServer#0" expanded="true" />
-                <element signature="e#5470#5474#0" expanded="true" />
-                <element signature="e#6315#6319#0" expanded="true" />
-                <element signature="e#6541#6545#0" expanded="true" />
-                <element signature="e#6666#6670#0" expanded="true" />
-                <element signature="e#6887#6891#0" expanded="true" />
-                <element signature="e#6963#6967#0" expanded="true" />
+                <element signature="e#5498#5502#0" expanded="true" />
+                <element signature="e#6343#6347#0" expanded="true" />
+                <element signature="method#createDirectory#0;class#NamingServer#0" expanded="true" />
+                <element signature="e#6569#6573#0" expanded="true" />
+                <element signature="e#6694#6698#0" expanded="true" />
+                <element signature="e#6915#6919#0" expanded="true" />
+                <element signature="e#6991#6995#0" expanded="true" />
                 <element signature="method#delete#0;class#NamingServer#0" expanded="true" />
                 <element signature="method#getStorage#0;class#NamingServer#0" expanded="true" />
-                <element signature="method#register#0;class#NamingServer#0" expanded="true" />
                 <element signature="method#getRandomServerStub#0;class#NamingServer#0" expanded="true" />
               </folding>
             </state>
@@ -110,60 +110,61 @@
       <file leaf-file-name="HashTree.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/naming/HashTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+            <state relative-caret-position="2844">
+              <caret line="160" column="23" selection-start-line="160" selection-start-column="23" selection-end-line="160" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#HashTree#0;class#HashTree#0" expanded="true" />
                 <element signature="method#HashTree#1;class#HashTree#0" expanded="true" />
                 <element signature="method#lock#0;class#HashTree#0" expanded="true" />
                 <element signature="method#apply_lock_recursive#0;class#HashTree#0" expanded="true" />
-                <element signature="e#1342#1384#0" expanded="true" />
-                <element signature="e#1975#2005#0" expanded="true" />
+                <element signature="e#1252#1294#0" expanded="true" />
+                <element signature="e#1885#1915#0" expanded="true" />
                 <element signature="method#removeWriteReplicas#0;class#HashTree#0" expanded="true" />
+                <element signature="e#3826#3830#0" expanded="true" />
                 <element signature="method#addReadReplicas#0;class#HashTree#0" expanded="true" />
                 <element signature="method#unlock#0;class#HashTree#0" expanded="true" />
                 <element signature="method#unlockRecursive#0;class#HashTree#0" expanded="true" />
                 <element signature="method#isDirectory#0;class#HashTree#0" expanded="true" />
-                <element signature="e#5390#5395#0" expanded="true" />
-                <element signature="e#5530#5534#0" expanded="true" />
-                <element signature="e#5567#5572#0" expanded="true" />
+                <element signature="e#6686#6691#0" expanded="true" />
+                <element signature="e#6826#6830#0" expanded="true" />
+                <element signature="e#6863#6868#0" expanded="true" />
                 <element signature="method#nameServerOperator#0;class#HashTree#0" expanded="true" />
-                <element signature="e#5826#5830#0" expanded="true" />
+                <element signature="e#7122#7126#0" expanded="true" />
                 <element signature="method#nameServerOperator#1;class#HashTree#0" expanded="true" />
-                <element signature="e#6483#6487#0" expanded="true" />
+                <element signature="e#7779#7783#0" expanded="true" />
                 <element signature="method#list#0;class#HashTree#0" expanded="true" />
-                <element signature="e#7998#8003#0" expanded="true" />
-                <element signature="e#8354#8359#0" expanded="true" />
-                <element signature="e#8611#8616#0" expanded="true" />
+                <element signature="e#9294#9299#0" expanded="true" />
+                <element signature="e#9650#9655#0" expanded="true" />
+                <element signature="e#9907#9912#0" expanded="true" />
                 <element signature="method#createFile#0;class#HashTree#0" expanded="true" />
-                <element signature="e#8775#8779#0" expanded="true" />
-                <element signature="e#8962#8966#0" expanded="true" />
+                <element signature="e#10071#10075#0" expanded="true" />
+                <element signature="e#10258#10262#0" expanded="true" />
                 <element signature="method#createDirectory#0;class#HashTree#0" expanded="true" />
-                <element signature="e#9114#9118#0" expanded="true" />
-                <element signature="e#9262#9266#0" expanded="true" />
-                <element signature="e#9304#9308#0" expanded="true" />
+                <element signature="e#10410#10414#0" expanded="true" />
+                <element signature="e#10558#10562#0" expanded="true" />
+                <element signature="e#10600#10604#0" expanded="true" />
                 <element signature="method#getStorage#0;class#HashTree#0" expanded="true" />
                 <element signature="method#delete#0;class#HashTree#0" expanded="true" />
-                <element signature="e#10414#10418#0" expanded="true" />
-                <element signature="e#10554#10558#0" expanded="true" />
-                <element signature="e#10597#10601#0" expanded="true" />
+                <element signature="e#11710#11714#0" expanded="true" />
+                <element signature="e#11850#11854#0" expanded="true" />
+                <element signature="e#11893#11897#0" expanded="true" />
                 <element signature="class#HashNode#0;class#HashTree#0" expanded="true" />
-                <element signature="e#11169#11170#0" expanded="true" />
-                <element signature="e#11222#11223#0" expanded="true" />
-                <element signature="e#11281#11282#0" expanded="true" />
-                <element signature="e#11340#11341#0" expanded="true" />
-                <element signature="e#11384#11385#0" expanded="true" />
-                <element signature="e#11431#11432#0" expanded="true" />
-                <element signature="e#11474#11475#0" expanded="true" />
-                <element signature="e#11520#11521#0" expanded="true" />
+                <element signature="e#12465#12466#0" expanded="true" />
+                <element signature="e#12518#12519#0" expanded="true" />
+                <element signature="e#12577#12578#0" expanded="true" />
+                <element signature="e#12636#12637#0" expanded="true" />
+                <element signature="e#12680#12681#0" expanded="true" />
+                <element signature="e#12727#12728#0" expanded="true" />
+                <element signature="e#12770#12771#0" expanded="true" />
+                <element signature="e#12816#12817#0" expanded="true" />
                 <element signature="method#hasDirectory#0;class#HashNode#0;class#HashTree#0" expanded="true" />
-                <element signature="e#11814#11815#0" expanded="true" />
-                <element signature="e#11863#11864#0" expanded="true" />
-                <element signature="e#11908#11909#0" expanded="true" />
-                <element signature="e#11956#11957#0" expanded="true" />
-                <element signature="e#12002#12003#0" expanded="true" />
-                <element signature="e#12051#12052#0" expanded="true" />
+                <element signature="e#13110#13111#0" expanded="true" />
+                <element signature="e#13159#13160#0" expanded="true" />
+                <element signature="e#13204#13205#0" expanded="true" />
+                <element signature="e#13252#13253#0" expanded="true" />
+                <element signature="e#13298#13299#0" expanded="true" />
+                <element signature="e#13347#13348#0" expanded="true" />
                 <element signature="method#hasFile#0;class#HashNode#0;class#HashTree#0" expanded="true" />
                 <element signature="method#create#0;class#HashNode#0;class#HashTree#0" expanded="true" />
                 <element signature="method#delete#0;class#HashNode#0;class#HashTree#0" expanded="true" />
@@ -174,13 +175,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Stub.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Stub.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rmi/Stub.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
+            <state relative-caret-position="270">
               <caret line="170" column="45" selection-start-line="170" selection-start-column="45" selection-end-line="170" selection-end-column="45" />
               <folding>
-                <element signature="docComment;method#create#1;class#Stub#0" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#Stub#0" expanded="true" />
+                <element signature="docComment;method#create#0;class#Stub#0" expanded="true" />
+                <element signature="method#create#0;class#Stub#0" expanded="true" />
+                <element signature="method#create#1;class#Stub#0" expanded="true" />
+                <element signature="docComment;method#create#2;class#Stub#0" expanded="true" />
+                <element signature="method#create#2;class#Stub#0" expanded="true" />
+                <element signature="e#6456#6529#0" expanded="true" />
+                <element signature="method#StubHandler#0;class#StubHandler#0;class#Stub#0" expanded="true" />
+                <element signature="method#StubHandler#1;class#StubHandler#0;class#Stub#0" expanded="true" />
+                <element signature="method#isRemoteMethod#0;class#StubHandler#0;class#Stub#0" expanded="true" />
+                <element signature="method#remoteProcedureInvocation#0;class#StubHandler#0;class#Stub#0" expanded="true" />
+                <element signature="e#8598#8647#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Registration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/naming/Registration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+              <folding>
+                <element signature="docComment;method#register#0;class#Registration#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -248,8 +273,8 @@
         <option value="$PROJECT_DIR$/rmi/Stub.java" />
         <option value="$PROJECT_DIR$/storage/StorageServer.java" />
         <option value="$PROJECT_DIR$/common/Path.java" />
-        <option value="$PROJECT_DIR$/naming/HashTree.java" />
         <option value="$PROJECT_DIR$/naming/NamingServer.java" />
+        <option value="$PROJECT_DIR$/naming/HashTree.java" />
       </list>
     </option>
   </component>
@@ -261,10 +286,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="41" />
-    <option name="y" value="21" />
-    <option name="width" value="1325" />
-    <option name="height" value="747" />
+    <option name="x" value="703" />
+    <option name="y" value="46" />
+    <option name="width" value="662" />
+    <option name="height" value="722" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -582,7 +607,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="41" y="21" width="1325" height="747" extended-state="6" />
+    <frame x="703" y="46" width="662" height="722" extended-state="4" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -596,7 +621,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38548386" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7709677" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="ConsoleMavenPlugin" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -698,20 +723,20 @@
             <element signature="method#stop#0;class#NamingServer#0" expanded="true" />
             <element signature="method#stopped#0;class#NamingServer#0" expanded="true" />
             <element signature="method#lock#0;class#NamingServer#0" expanded="true" />
-            <element signature="e#4907#4908#0" expanded="true" />
-            <element signature="e#4955#4956#0" expanded="true" />
+            <element signature="e#4935#4936#0" expanded="true" />
+            <element signature="e#4983#4984#0" expanded="true" />
             <element signature="method#isDirectory#0;class#NamingServer#0" expanded="true" />
             <element signature="method#list#0;class#NamingServer#0" expanded="true" />
             <element signature="method#createFile#0;class#NamingServer#0" expanded="true" />
-            <element signature="e#5470#5474#0" expanded="true" />
-            <element signature="e#6315#6319#0" expanded="true" />
-            <element signature="e#6541#6545#0" expanded="true" />
-            <element signature="e#6666#6670#0" expanded="true" />
-            <element signature="e#6887#6891#0" expanded="true" />
-            <element signature="e#6963#6967#0" expanded="true" />
+            <element signature="e#5498#5502#0" expanded="true" />
+            <element signature="e#6343#6347#0" expanded="true" />
+            <element signature="method#createDirectory#0;class#NamingServer#0" expanded="true" />
+            <element signature="e#6569#6573#0" expanded="true" />
+            <element signature="e#6694#6698#0" expanded="true" />
+            <element signature="e#6915#6919#0" expanded="true" />
+            <element signature="e#6991#6995#0" expanded="true" />
             <element signature="method#delete#0;class#NamingServer#0" expanded="true" />
             <element signature="method#getStorage#0;class#NamingServer#0" expanded="true" />
-            <element signature="method#register#0;class#NamingServer#0" expanded="true" />
             <element signature="method#getRandomServerStub#0;class#NamingServer#0" expanded="true" />
           </folding>
         </state>
@@ -735,7 +760,19 @@
         <state relative-caret-position="630">
           <caret line="170" column="45" selection-start-line="170" selection-start-column="45" selection-end-line="170" selection-end-column="45" />
           <folding>
-            <element signature="docComment;method#create#1;class#Stub#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#Stub#0" expanded="true" />
+            <element signature="docComment;method#create#0;class#Stub#0" expanded="true" />
+            <element signature="method#create#0;class#Stub#0" expanded="true" />
+            <element signature="method#create#1;class#Stub#0" expanded="true" />
+            <element signature="docComment;method#create#2;class#Stub#0" expanded="true" />
+            <element signature="method#create#2;class#Stub#0" expanded="true" />
+            <element signature="e#6456#6529#0" expanded="true" />
+            <element signature="method#StubHandler#0;class#StubHandler#0;class#Stub#0" expanded="true" />
+            <element signature="method#StubHandler#1;class#StubHandler#0;class#Stub#0" expanded="true" />
+            <element signature="method#isRemoteMethod#0;class#StubHandler#0;class#Stub#0" expanded="true" />
+            <element signature="method#remoteProcedureInvocation#0;class#StubHandler#0;class#Stub#0" expanded="true" />
+            <element signature="e#8598#8647#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -787,10 +824,10 @@
         <state relative-caret-position="126">
           <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#create#0;class#Command#0" expanded="true" />
-            <element signature="docComment;method#delete#0;class#Command#0" expanded="true" />
-            <element signature="docComment;method#copy#0;class#Command#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="docComment;method#create#0;class#Command#0" expanded="false" />
+            <element signature="docComment;method#delete#0;class#Command#0" expanded="false" />
+            <element signature="docComment;method#copy#0;class#Command#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -807,10 +844,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#create#0;class#Command#0" expanded="true" />
-            <element signature="docComment;method#delete#0;class#Command#0" expanded="true" />
-            <element signature="docComment;method#copy#0;class#Command#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="docComment;method#create#0;class#Command#0" expanded="false" />
+            <element signature="docComment;method#delete#0;class#Command#0" expanded="false" />
+            <element signature="docComment;method#copy#0;class#Command#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -871,10 +908,10 @@
         <state relative-caret-position="180">
           <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#create#0;class#Command#0" expanded="true" />
-            <element signature="docComment;method#delete#0;class#Command#0" expanded="true" />
-            <element signature="docComment;method#copy#0;class#Command#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="docComment;method#create#0;class#Command#0" expanded="false" />
+            <element signature="docComment;method#delete#0;class#Command#0" expanded="false" />
+            <element signature="docComment;method#copy#0;class#Command#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -883,14 +920,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/naming/Registration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="52" column="26" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1007,16 +1036,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rmi/Stub.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="170" column="45" selection-start-line="170" selection-start-column="45" selection-end-line="170" selection-end-column="45" />
-          <folding>
-            <element signature="docComment;method#create#1;class#Stub#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/naming/NamingStubs.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -1043,75 +1062,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/naming/HashTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#HashTree#0;class#HashTree#0" expanded="true" />
-            <element signature="method#HashTree#1;class#HashTree#0" expanded="true" />
-            <element signature="method#lock#0;class#HashTree#0" expanded="true" />
-            <element signature="method#apply_lock_recursive#0;class#HashTree#0" expanded="true" />
-            <element signature="e#1342#1384#0" expanded="true" />
-            <element signature="e#1975#2005#0" expanded="true" />
-            <element signature="method#removeWriteReplicas#0;class#HashTree#0" expanded="true" />
-            <element signature="method#addReadReplicas#0;class#HashTree#0" expanded="true" />
-            <element signature="method#unlock#0;class#HashTree#0" expanded="true" />
-            <element signature="method#unlockRecursive#0;class#HashTree#0" expanded="true" />
-            <element signature="method#isDirectory#0;class#HashTree#0" expanded="true" />
-            <element signature="e#5390#5395#0" expanded="true" />
-            <element signature="e#5530#5534#0" expanded="true" />
-            <element signature="e#5567#5572#0" expanded="true" />
-            <element signature="method#nameServerOperator#0;class#HashTree#0" expanded="true" />
-            <element signature="e#5826#5830#0" expanded="true" />
-            <element signature="method#nameServerOperator#1;class#HashTree#0" expanded="true" />
-            <element signature="e#6483#6487#0" expanded="true" />
-            <element signature="method#list#0;class#HashTree#0" expanded="true" />
-            <element signature="e#7998#8003#0" expanded="true" />
-            <element signature="e#8354#8359#0" expanded="true" />
-            <element signature="e#8611#8616#0" expanded="true" />
-            <element signature="method#createFile#0;class#HashTree#0" expanded="true" />
-            <element signature="e#8775#8779#0" expanded="true" />
-            <element signature="e#8962#8966#0" expanded="true" />
-            <element signature="method#createDirectory#0;class#HashTree#0" expanded="true" />
-            <element signature="e#9114#9118#0" expanded="true" />
-            <element signature="e#9262#9266#0" expanded="true" />
-            <element signature="e#9304#9308#0" expanded="true" />
-            <element signature="method#getStorage#0;class#HashTree#0" expanded="true" />
-            <element signature="method#delete#0;class#HashTree#0" expanded="true" />
-            <element signature="e#10414#10418#0" expanded="true" />
-            <element signature="e#10554#10558#0" expanded="true" />
-            <element signature="e#10597#10601#0" expanded="true" />
-            <element signature="class#HashNode#0;class#HashTree#0" expanded="true" />
-            <element signature="e#11169#11170#0" expanded="true" />
-            <element signature="e#11222#11223#0" expanded="true" />
-            <element signature="e#11281#11282#0" expanded="true" />
-            <element signature="e#11340#11341#0" expanded="true" />
-            <element signature="e#11384#11385#0" expanded="true" />
-            <element signature="e#11431#11432#0" expanded="true" />
-            <element signature="e#11474#11475#0" expanded="true" />
-            <element signature="e#11520#11521#0" expanded="true" />
-            <element signature="method#hasDirectory#0;class#HashNode#0;class#HashTree#0" expanded="true" />
-            <element signature="e#11814#11815#0" expanded="true" />
-            <element signature="e#11863#11864#0" expanded="true" />
-            <element signature="e#11908#11909#0" expanded="true" />
-            <element signature="e#11956#11957#0" expanded="true" />
-            <element signature="e#12002#12003#0" expanded="true" />
-            <element signature="e#12051#12052#0" expanded="true" />
-            <element signature="method#hasFile#0;class#HashNode#0;class#HashTree#0" expanded="true" />
-            <element signature="method#create#0;class#HashNode#0;class#HashTree#0" expanded="true" />
-            <element signature="method#delete#0;class#HashNode#0;class#HashTree#0" expanded="true" />
-            <element signature="method#getAllStubs#0;class#HashNode#0;class#HashTree#0" expanded="true" />
-            <element signature="method#getFileStorage#0;class#HashNode#0;class#HashTree#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/naming/NamingServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="219" column="36" selection-start-line="219" selection-start-column="36" selection-end-line="219" selection-end-column="36" />
+        <state relative-caret-position="115">
+          <caret line="261" column="62" selection-start-line="261" selection-start-column="41" selection-end-line="261" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#ServerStub#0;class#ServerStub#0" expanded="true" />
@@ -1121,21 +1075,119 @@
             <element signature="method#stop#0;class#NamingServer#0" expanded="true" />
             <element signature="method#stopped#0;class#NamingServer#0" expanded="true" />
             <element signature="method#lock#0;class#NamingServer#0" expanded="true" />
-            <element signature="e#4907#4908#0" expanded="true" />
-            <element signature="e#4955#4956#0" expanded="true" />
+            <element signature="e#4935#4936#0" expanded="true" />
+            <element signature="e#4983#4984#0" expanded="true" />
             <element signature="method#isDirectory#0;class#NamingServer#0" expanded="true" />
             <element signature="method#list#0;class#NamingServer#0" expanded="true" />
             <element signature="method#createFile#0;class#NamingServer#0" expanded="true" />
-            <element signature="e#5470#5474#0" expanded="true" />
-            <element signature="e#6315#6319#0" expanded="true" />
-            <element signature="e#6541#6545#0" expanded="true" />
-            <element signature="e#6666#6670#0" expanded="true" />
-            <element signature="e#6887#6891#0" expanded="true" />
-            <element signature="e#6963#6967#0" expanded="true" />
+            <element signature="e#5498#5502#0" expanded="true" />
+            <element signature="e#6343#6347#0" expanded="true" />
+            <element signature="method#createDirectory#0;class#NamingServer#0" expanded="true" />
+            <element signature="e#6569#6573#0" expanded="true" />
+            <element signature="e#6694#6698#0" expanded="true" />
+            <element signature="e#6915#6919#0" expanded="true" />
+            <element signature="e#6991#6995#0" expanded="true" />
             <element signature="method#delete#0;class#NamingServer#0" expanded="true" />
             <element signature="method#getStorage#0;class#NamingServer#0" expanded="true" />
-            <element signature="method#register#0;class#NamingServer#0" expanded="true" />
             <element signature="method#getRandomServerStub#0;class#NamingServer#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naming/Registration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+          <folding>
+            <element signature="docComment;method#register#0;class#Registration#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naming/HashTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2844">
+          <caret line="160" column="23" selection-start-line="160" selection-start-column="23" selection-end-line="160" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#HashTree#0;class#HashTree#0" expanded="true" />
+            <element signature="method#HashTree#1;class#HashTree#0" expanded="true" />
+            <element signature="method#lock#0;class#HashTree#0" expanded="true" />
+            <element signature="method#apply_lock_recursive#0;class#HashTree#0" expanded="true" />
+            <element signature="e#1252#1294#0" expanded="true" />
+            <element signature="e#1885#1915#0" expanded="true" />
+            <element signature="method#removeWriteReplicas#0;class#HashTree#0" expanded="true" />
+            <element signature="e#3826#3830#0" expanded="true" />
+            <element signature="method#addReadReplicas#0;class#HashTree#0" expanded="true" />
+            <element signature="method#unlock#0;class#HashTree#0" expanded="true" />
+            <element signature="method#unlockRecursive#0;class#HashTree#0" expanded="true" />
+            <element signature="method#isDirectory#0;class#HashTree#0" expanded="true" />
+            <element signature="e#6686#6691#0" expanded="true" />
+            <element signature="e#6826#6830#0" expanded="true" />
+            <element signature="e#6863#6868#0" expanded="true" />
+            <element signature="method#nameServerOperator#0;class#HashTree#0" expanded="true" />
+            <element signature="e#7122#7126#0" expanded="true" />
+            <element signature="method#nameServerOperator#1;class#HashTree#0" expanded="true" />
+            <element signature="e#7779#7783#0" expanded="true" />
+            <element signature="method#list#0;class#HashTree#0" expanded="true" />
+            <element signature="e#9294#9299#0" expanded="true" />
+            <element signature="e#9650#9655#0" expanded="true" />
+            <element signature="e#9907#9912#0" expanded="true" />
+            <element signature="method#createFile#0;class#HashTree#0" expanded="true" />
+            <element signature="e#10071#10075#0" expanded="true" />
+            <element signature="e#10258#10262#0" expanded="true" />
+            <element signature="method#createDirectory#0;class#HashTree#0" expanded="true" />
+            <element signature="e#10410#10414#0" expanded="true" />
+            <element signature="e#10558#10562#0" expanded="true" />
+            <element signature="e#10600#10604#0" expanded="true" />
+            <element signature="method#getStorage#0;class#HashTree#0" expanded="true" />
+            <element signature="method#delete#0;class#HashTree#0" expanded="true" />
+            <element signature="e#11710#11714#0" expanded="true" />
+            <element signature="e#11850#11854#0" expanded="true" />
+            <element signature="e#11893#11897#0" expanded="true" />
+            <element signature="class#HashNode#0;class#HashTree#0" expanded="true" />
+            <element signature="e#12465#12466#0" expanded="true" />
+            <element signature="e#12518#12519#0" expanded="true" />
+            <element signature="e#12577#12578#0" expanded="true" />
+            <element signature="e#12636#12637#0" expanded="true" />
+            <element signature="e#12680#12681#0" expanded="true" />
+            <element signature="e#12727#12728#0" expanded="true" />
+            <element signature="e#12770#12771#0" expanded="true" />
+            <element signature="e#12816#12817#0" expanded="true" />
+            <element signature="method#hasDirectory#0;class#HashNode#0;class#HashTree#0" expanded="true" />
+            <element signature="e#13110#13111#0" expanded="true" />
+            <element signature="e#13159#13160#0" expanded="true" />
+            <element signature="e#13204#13205#0" expanded="true" />
+            <element signature="e#13252#13253#0" expanded="true" />
+            <element signature="e#13298#13299#0" expanded="true" />
+            <element signature="e#13347#13348#0" expanded="true" />
+            <element signature="method#hasFile#0;class#HashNode#0;class#HashTree#0" expanded="true" />
+            <element signature="method#create#0;class#HashNode#0;class#HashTree#0" expanded="true" />
+            <element signature="method#delete#0;class#HashNode#0;class#HashTree#0" expanded="true" />
+            <element signature="method#getAllStubs#0;class#HashNode#0;class#HashTree#0" expanded="true" />
+            <element signature="method#getFileStorage#0;class#HashNode#0;class#HashTree#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rmi/Stub.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="170" column="45" selection-start-line="170" selection-start-column="45" selection-end-line="170" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#Stub#0" expanded="true" />
+            <element signature="docComment;method#create#0;class#Stub#0" expanded="true" />
+            <element signature="method#create#0;class#Stub#0" expanded="true" />
+            <element signature="method#create#1;class#Stub#0" expanded="true" />
+            <element signature="docComment;method#create#2;class#Stub#0" expanded="true" />
+            <element signature="method#create#2;class#Stub#0" expanded="true" />
+            <element signature="e#6456#6529#0" expanded="true" />
+            <element signature="method#StubHandler#0;class#StubHandler#0;class#Stub#0" expanded="true" />
+            <element signature="method#StubHandler#1;class#StubHandler#0;class#Stub#0" expanded="true" />
+            <element signature="method#isRemoteMethod#0;class#StubHandler#0;class#Stub#0" expanded="true" />
+            <element signature="method#remoteProcedureInvocation#0;class#StubHandler#0;class#Stub#0" expanded="true" />
+            <element signature="e#8598#8647#0" expanded="true" />
           </folding>
         </state>
       </provider>

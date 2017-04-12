@@ -5,10 +5,7 @@ import rmi.RMIException;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.Hashtable;
-import java.util.Iterator;
-import java.util.LinkedList;
+import java.util.*;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
@@ -114,6 +111,55 @@ public class HashTree {
 
         }
         return true;
+    }
+
+    public boolean recursiveFileCreation(Path path, ServerStub serverStub)
+    {
+        Iterator<String> iterator = path.iterator();
+        HashNode hashNode = root;
+        String currPath = iterator.next();
+        Deque<HashNode> stack = new ArrayDeque<>();
+        boolean created = true;
+        while (iterator.hasNext())
+        {
+            hashNode.lockRead();
+            stack.push(hashNode);
+            if (hashNode.hasFile(currPath))
+            {
+                created = false;
+                break;
+            }
+
+            if (!hashNode.hasDirectory(currPath)){
+                hashNode.unlockRead();
+                hashNode.lockWrite();
+                hashNode.create(currPath, null);
+                hashNode.unlockWrite();
+                hashNode.lockRead();
+            }
+        }
+
+        if (created){
+            hashNode.lockRead();
+            stack.push(hashNode);
+
+            if (hashNode.hasDirectory(currPath) || hashNode.hasFile(currPath)){
+                created = false;
+            }else{
+                hashNode.unlockRead();
+                hashNode.lockWrite();
+                hashNode.create(currPath, serverStub);
+                hashNode.unlockWrite();
+                hashNode.lockRead();
+            }
+        }
+
+        while (!stack.isEmpty()){
+            stack.pop().unlockRead();
+        }
+
+        return created;
+
     }
 
     public boolean addReadReplicas (HashNode parentNode, Path fileName)

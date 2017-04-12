@@ -8,6 +8,7 @@ import storage.Storage;
 
 import java.io.FileNotFoundException;
 import java.net.InetSocketAddress;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -239,7 +240,34 @@ public class NamingServer implements Service, Registration
     public Path[] register(Storage client_stub, Command command_stub,
                            Path[] files)
     {
-        throw new UnsupportedOperationException("not implemented");
+        if (client_stub == null || command_stub == null || files == null){
+            throw new NullPointerException("Client Stub/Command Stub/Files are null");
+        }
+        ArrayList<Path> deleteList = new ArrayList<>();
+        ServerStub newStub = new ServerStub(client_stub, command_stub);
+        for(ServerStub s : serverStubList)
+        {
+            if (newStub.equals(s))
+            {
+                throw new IllegalStateException("Duplicate storage server registration");
+            }
+        }
+
+        synchronized (serverStubList)
+        {
+            serverStubList.add(newStub);
+        }
+
+        for(Path p : files){
+            if (!p.isRoot() && !hashTree.recursiveFileCreation(p, newStub)){
+                deleteList.add(p);
+            }
+        }
+
+        Path[] deleteArray = new Path[deleteList.size()];
+        deleteArray = deleteList.toArray(deleteArray);
+        return deleteArray;
+
     }
 
     public ServerStub getRandomServerStub () throws FileNotFoundException {
