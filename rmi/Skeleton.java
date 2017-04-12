@@ -67,7 +67,7 @@ public class Skeleton<T>
     public Skeleton(Class<T> c, T server)
     {
         // check for interface. ToDo: Not sure as per comments above.
-        if (!c.isInstance(RMIException.class)){
+        if (!c.isInterface()){
             throw new Error("Does not implement any interface");
         }
 
@@ -290,14 +290,13 @@ public class Skeleton<T>
                 // get method name.
                 String methodName = (String) inputStream.readObject();
                 // get parameter types
-                Class<?> parameterTypes = (Class<?>) inputStream.readObject();
+                Class<?>[] parameterTypes = (Class<?>[]) inputStream.readObject();
 
                 method = c.getMethod(methodName, parameterTypes);
                 if (method != null){
                     // invoke the method.
                     Object result = method.invoke(server, args);
                     // Success.
-                    // Todo: Should we send a success result?
                     outputStream.writeObject(RMIStatus.OK);
                     outputStream.writeObject(result);
                     clientSocket.close();
@@ -319,7 +318,6 @@ public class Skeleton<T>
                 try {
                     outputStream.writeObject(RMIStatus.Expt);
                     outputStream.writeObject(e.getCause());
-                    // Todo : Should we send a failure result?
                     outputStream.close();
                 } catch (IOException e1) {
                     service_error(new RMIException(e1));

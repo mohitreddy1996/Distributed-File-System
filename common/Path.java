@@ -4,10 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.Serializable;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /** Distributed filesystem paths.
 
@@ -54,10 +51,10 @@ public class Path implements Iterable<String>, Comparable<Path>, Serializable
     */
     public Path(Path path, String component)
     {
-        // this has to be used.... But should be first statement in constructor. ToDo.
-        java.nio.file.Path newPath = stringToPath(path.pathString).resolve(component);
-        String newPathString = newPath.toString();
-        if (component.contains("/"))
+        // this has to be used.... But should be first statement in constructor.
+        this(stringToPath(path.pathString).resolve(component).toString());
+
+        if (component.contains("/") || component.contains(":"))
         {
             // according to the comments;
             throw new IllegalArgumentException("Component contains \'/\'");
@@ -67,6 +64,8 @@ public class Path implements Iterable<String>, Comparable<Path>, Serializable
             // according to the comments;
             throw new IllegalArgumentException("Component given is an empty string");
         }
+
+
     }
 
     /** Creates a new path from a path string.
@@ -116,13 +115,12 @@ public class Path implements Iterable<String>, Comparable<Path>, Serializable
     @Override
     public Iterator<String> iterator()
     {
-        List<String> components = new ArrayList<>();
         if (isRoot())
         {
-            return components.iterator();
+            return new ArrayList<String>().iterator();
         }
-        Collections.addAll(components, pathString.split(DELIMITER));
-        return components.iterator();
+        String[] compon = pathString.split(DELIMITER);
+        return Arrays.asList(compon).subList(1, compon.length).iterator();
     }
 
     /** Lists the paths of all files in a directory tree on the local
@@ -137,23 +135,27 @@ public class Path implements Iterable<String>, Comparable<Path>, Serializable
      */
     public static Path[] list(File directory) throws FileNotFoundException
     {
-        ArrayList<Path> list = new ArrayList<>();
-        makeList(directory,list);
-        return (Path[]) list.toArray();
+        LinkedList<Path> pathLinkedList = makeList(directory, new Path());
+        Path[] paths = new Path[pathLinkedList.size()];
+        for (int i=0; i<pathLinkedList.size(); i++){
+            paths[i] = pathLinkedList.get(i);
+        }
+        return paths;
     }
 
-    public static void makeList(File directory,ArrayList<Path> list)
+    public static LinkedList<Path> makeList(File directory, Path prefix)
     {
-      if(!directory.isDirectory()){
-        list.add(new Path(directory.toPath().toString()));
-      }
-      else{
         File[] listFile = directory.listFiles();
-        assert listFile != null;
+        LinkedList<Path> linkedList = new LinkedList<>();
         for(File f : listFile){
-          makeList(f,list);
+            if (f.isDirectory()){
+                linkedList.addAll(makeList(f, new Path(prefix, f.getName())));
+            }else if(f.isFile()){
+                linkedList.add(new Path(prefix, f.getName()));
+            }
         }
-      }
+        return linkedList;
+
     }
 
     /** Determines whether the path represents the root directory.

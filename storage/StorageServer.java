@@ -122,10 +122,15 @@ public class StorageServer implements Storage, Command
         Storage storageStub = Stub.create(Storage.class, storageSkeleton, hostname);
         Command commandStub = Stub.create(Command.class, commandSkeleton, hostname);
 
-        // ToDo: How to get the paths.
-
+        Path[] paths = Path.list(root);
         // Register to the name server.
-        Path[] duplicates = naming_server.register(storageStub, commandStub, new Path[] {});
+        Path[] duplicates = naming_server.register(storageStub, commandStub, paths);
+
+        for (Path path : duplicates) {
+            delete(path);
+        }
+
+        started = true;
 
     }
 
@@ -290,7 +295,6 @@ public class StorageServer implements Storage, Command
     public synchronized boolean copy(Path file, Storage server)
         throws RMIException, FileNotFoundException, IOException
     {
-        // ToDo: Not sure if this is a move or a copy;
         // Assuming a move. Removing from existing from current and writing it in a new place.
         int bufferSize = 2048;
         File requiredFile = file.toFile(root);

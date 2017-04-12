@@ -9,6 +9,7 @@ import java.lang.reflect.Proxy;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.Objects;
 
 /** RMI stub factory.
 
@@ -145,7 +146,7 @@ public abstract class Stub
 
         // https://docs.oracle.com/javase/6/docs/api/java/lang/reflect/Proxy.html
         // https://docs.oracle.com/javase/6/docs/api/java/lang/reflect/InvocationHandler.html
-        return (T) java.lang.reflect.Proxy.newProxyInstance(c.getClassLoader(), new Class<?>[] {c}, new StubHandler(c, address));
+        return (T) Proxy.newProxyInstance(c.getClassLoader(), new Class<?>[] {c}, new StubHandler(c, address));
 
     }
 
@@ -167,11 +168,62 @@ public abstract class Stub
                 // Remote Invocation to be made.
                 return remoteProcedureInvocation(o, method, objects);
             }else{
-                // ToDo : Local methods invocation.
                 // check the outputs of the method.getName()
+                if (Objects.equals(method.getName(), "equals")) {
+                    return localEquals(o, objects);
+                }
+
+                if (Objects.equals(method.getName(), "hashCode")) {
+                    return localHashCode (o, objects);
+                }
+
+                if (Objects.equals(method.getName(), "toString")) {
+                    return localToString (o, objects);
+                }
 
                 return new RMIException(new NoSuchMethodException());
             }
+        }
+
+        private boolean localEquals (Object proxy, Object[] args) {
+            if (args == null){
+                return false;
+            }
+            if (args.length != 1){
+                return false;
+            }
+
+            if (args[0] == null){
+                return false;
+            }
+
+            if (!args[0].getClass().equals(proxy.getClass())){
+                return false;
+            }
+
+            StubHandler stubHandler1 = (StubHandler) Proxy.getInvocationHandler(args[0]);
+            StubHandler stubHandler2 = (StubHandler) Proxy.getInvocationHandler(proxy);
+            return stubHandler1.address.equals(stubHandler2.address);
+        }
+
+        private int localHashCode(Object proxy, Object[] args) {
+            if (args != null){
+                throw new IllegalArgumentException("Method hashcode takes no argument!");
+            }
+            StubHandler stubHandler = (StubHandler) Proxy.getInvocationHandler(proxy);
+            return stubHandler.address.hashCode() + proxy.getClass().hashCode();
+        }
+
+        private String localToString(Object proxy, Object[] args){
+            if (args != null){
+                throw new IllegalArgumentException("Method to string takes no argument");
+            }
+
+            StubHandler stubHandler = (StubHandler) Proxy.getInvocationHandler(proxy);
+            String name = "Remote Interface : " + proxy.getClass().getInterfaces()[0].toString();
+            String addr = "Remote Address: " + stubHandler.address.toString();
+
+            return name + "\n" + addr + "\n";
         }
 
         private boolean isRemoteMethod (Method method){
