@@ -137,9 +137,9 @@ public class Path implements Iterable<String>, Comparable<Path>, Serializable
      */
     public static Path[] list(File directory) throws FileNotFoundException
     {
-        ArrayList<Path> list = new ArrayList<Path>();
+        ArrayList<Path> list = new ArrayList<>();
         makeList(directory,list);
-        return list.toArray();
+        return (Path[]) list.toArray();
     }
 
     public static void makeList(File directory,ArrayList<Path> list)

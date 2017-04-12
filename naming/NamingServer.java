@@ -8,6 +8,21 @@ import storage.Storage;
 
 import java.io.FileNotFoundException;
 import java.net.InetSocketAddress;
+import java.util.LinkedList;
+
+class ServerStub {
+    public Storage storageStub;
+    public Command commandStub;
+
+    public ServerStub (Storage storageStub, Command commandStub) {
+        this.storageStub = storageStub;
+        this.commandStub = commandStub;
+    }
+
+    public boolean equals (ServerStub compareStub) {
+        return storageStub.equals(compareStub.storageStub) && commandStub.equals(compareStub.commandStub);
+    }
+}
 
 /** Naming server.
 
@@ -38,6 +53,8 @@ public class NamingServer implements Service, Registration
     private boolean stopped = false;
     private Skeleton<Registration> registrationSkeleton;
     private Skeleton<Service> serviceSkeleton;
+    private LinkedList<ServerStub> serverStubList = new LinkedList<>();
+    private HashTree hashTree = new HashTree(serverStubList);
     /** Creates the naming server object.
 
         <p>
@@ -123,7 +140,7 @@ public class NamingServer implements Service, Registration
     @Override
     public void lock(Path path, boolean exclusive) throws FileNotFoundException
     {
-        throw new UnsupportedOperationException("not implemented");
+        hashTree.lock(path, exclusive);
     }
 
     @Override
