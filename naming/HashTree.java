@@ -1,8 +1,10 @@
 package naming;
 
 import common.Path;
+import rmi.RMIException;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -74,7 +76,8 @@ public class HashTree {
                 lastComp.lockWrite();;
                 if (lastComp.hashtable == null)
                 {
-                    //
+                    // remove replicates.
+                    removeWriteReplicas (lastComp, path);
                 }
             }
             else{
@@ -82,10 +85,54 @@ public class HashTree {
                 lastComp.lockRead();
                 if (lastComp.hashtable == null)
                 {
-                    //
+                    // replicate and add all to hashtable
+                    addReadReplicas (lastComp, path);
                 }
             }
         }
+    }
+
+    // referred.
+    public boolean removeWriteReplicas(HashNode parentNode, Path fileName)
+    {
+        while (parentNode.serverStubList.size() > 1)
+        {
+            ServerStub removedStub = parentNode.serverStubList.removeLast();
+
+            try {
+                removedStub.commandStub.delete(fileName);
+            } catch (RMIException e) {
+                e.printStackTrace();
+            }
+
+        }
+        return true;
+    }
+
+    public boolean addReadReplicas (HashNode parentNode, Path fileName)
+    {
+        synchronized (parentNode)
+        {
+            for (ServerStub serverStub : serverStubList){
+                if (parentNode.serverStubList.contains(serverStub))
+                    continue;
+
+                try {
+                    serverStub.commandStub.copy(fileName, parentNode.serverStubList.get(0).storageStub);
+                } catch (RMIException e) {
+                    e.printStackTrace();
+                    continue;
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    continue;
+                }
+
+                // add this server to the server list and return;
+                parentNode.serverStubList.add(serverStub);
+                return true;
+            }
+        }
+        return false;
     }
 
     private class HashNode {

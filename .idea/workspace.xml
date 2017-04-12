@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79232ab4-55ec-4212-a6fc-2faaf6a81c1e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/naming/HashTree.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/Path.java" afterPath="$PROJECT_DIR$/common/Path.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/naming/NamingServer.java" afterPath="$PROJECT_DIR$/naming/NamingServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/naming/HashTree.java" afterPath="$PROJECT_DIR$/naming/HashTree.java" />
     </list>
     <ignored path="Distributed File System.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -95,27 +92,30 @@
       <file leaf-file-name="HashTree.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/naming/HashTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1242">
-              <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+            <state relative-caret-position="1332">
+              <caret line="95" column="19" selection-start-line="95" selection-start-column="19" selection-end-line="95" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#HashTree#0;class#HashTree#0" expanded="true" />
                 <element signature="method#HashTree#1;class#HashTree#0" expanded="true" />
+                <element signature="method#lock#0;class#HashTree#0" expanded="true" />
                 <element signature="method#apply_lock_recursive#0;class#HashTree#0" expanded="true" />
-                <element signature="e#1198#1240#0" expanded="true" />
-                <element signature="e#1831#1861#0" expanded="true" />
+                <element signature="e#1251#1293#0" expanded="true" />
+                <element signature="e#1884#1914#0" expanded="true" />
+                <element signature="method#removeWriteReplicas#0;class#HashTree#0" expanded="true" />
+                <element signature="method#addReadReplicas#0;class#HashTree#0" expanded="true" />
                 <element signature="class#HashNode#0;class#HashTree#0" expanded="true" />
-                <element signature="e#2695#2696#0" expanded="true" />
-                <element signature="e#2748#2749#0" expanded="true" />
-                <element signature="e#2792#2793#0" expanded="true" />
-                <element signature="e#2839#2840#0" expanded="true" />
-                <element signature="e#2882#2883#0" expanded="true" />
-                <element signature="e#2928#2929#0" expanded="true" />
+                <element signature="e#4217#4218#0" expanded="true" />
+                <element signature="e#4270#4271#0" expanded="true" />
+                <element signature="e#4314#4315#0" expanded="true" />
+                <element signature="e#4361#4362#0" expanded="true" />
+                <element signature="e#4404#4405#0" expanded="true" />
+                <element signature="e#4450#4451#0" expanded="true" />
                 <element signature="method#hasDirectory#0;class#HashNode#0;class#HashTree#0" expanded="true" />
-                <element signature="e#3222#3223#0" expanded="true" />
-                <element signature="e#3271#3272#0" expanded="true" />
-                <element signature="e#3316#3317#0" expanded="true" />
-                <element signature="e#3364#3365#0" expanded="true" />
+                <element signature="e#4744#4745#0" expanded="true" />
+                <element signature="e#4793#4794#0" expanded="true" />
+                <element signature="e#4838#4839#0" expanded="true" />
+                <element signature="e#4886#4887#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -968,27 +968,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/naming/HashTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1242">
-          <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+        <state relative-caret-position="1332">
+          <caret line="95" column="19" selection-start-line="95" selection-start-column="19" selection-end-line="95" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#HashTree#0;class#HashTree#0" expanded="true" />
             <element signature="method#HashTree#1;class#HashTree#0" expanded="true" />
+            <element signature="method#lock#0;class#HashTree#0" expanded="true" />
             <element signature="method#apply_lock_recursive#0;class#HashTree#0" expanded="true" />
-            <element signature="e#1198#1240#0" expanded="true" />
-            <element signature="e#1831#1861#0" expanded="true" />
+            <element signature="e#1251#1293#0" expanded="true" />
+            <element signature="e#1884#1914#0" expanded="true" />
+            <element signature="method#removeWriteReplicas#0;class#HashTree#0" expanded="true" />
+            <element signature="method#addReadReplicas#0;class#HashTree#0" expanded="true" />
             <element signature="class#HashNode#0;class#HashTree#0" expanded="true" />
-            <element signature="e#2695#2696#0" expanded="true" />
-            <element signature="e#2748#2749#0" expanded="true" />
-            <element signature="e#2792#2793#0" expanded="true" />
-            <element signature="e#2839#2840#0" expanded="true" />
-            <element signature="e#2882#2883#0" expanded="true" />
-            <element signature="e#2928#2929#0" expanded="true" />
+            <element signature="e#4217#4218#0" expanded="true" />
+            <element signature="e#4270#4271#0" expanded="true" />
+            <element signature="e#4314#4315#0" expanded="true" />
+            <element signature="e#4361#4362#0" expanded="true" />
+            <element signature="e#4404#4405#0" expanded="true" />
+            <element signature="e#4450#4451#0" expanded="true" />
             <element signature="method#hasDirectory#0;class#HashNode#0;class#HashTree#0" expanded="true" />
-            <element signature="e#3222#3223#0" expanded="true" />
-            <element signature="e#3271#3272#0" expanded="true" />
-            <element signature="e#3316#3317#0" expanded="true" />
-            <element signature="e#3364#3365#0" expanded="true" />
+            <element signature="e#4744#4745#0" expanded="true" />
+            <element signature="e#4793#4794#0" expanded="true" />
+            <element signature="e#4838#4839#0" expanded="true" />
+            <element signature="e#4886#4887#0" expanded="true" />
           </folding>
         </state>
       </provider>
