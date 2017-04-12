@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79232ab4-55ec-4212-a6fc-2faaf6a81c1e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/naming/NamingServer.java" afterPath="$PROJECT_DIR$/naming/NamingServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/StorageServer.java" afterPath="$PROJECT_DIR$/storage/StorageServer.java" />
     </list>
     <ignored path="Distributed File System.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,8 +26,8 @@
       <file leaf-file-name="StorageServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/storage/StorageServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5236">
-              <caret line="313" column="20" selection-start-line="313" selection-start-column="20" selection-end-line="313" selection-end-column="20" />
+            <state relative-caret-position="360">
+              <caret line="281" column="30" selection-start-line="281" selection-start-column="30" selection-end-line="281" selection-end-column="30" />
               <folding>
                 <element signature="docComment;method#StorageServer#0;class#StorageServer#0" expanded="true" />
                 <element signature="method#StorageServer#0;class#StorageServer#0" expanded="true" />
@@ -50,9 +50,9 @@
                 <element signature="e#8504#8527#0" expanded="true" />
                 <element signature="method#delete#0;class#StorageServer#0" expanded="true" />
                 <element signature="method#removeChildrenDirs#0;class#StorageServer#0" expanded="true" />
-                <element signature="method#removeParent#0;class#StorageServer#0" expanded="true" />
+                <element signature="method#copy#0;class#StorageServer#0" expanded="true" />
                 <element signature="e#10273#10319#0" expanded="true" />
-                <element signature="e#10898#10902#0" expanded="true" />
+                <element signature="e#10805#10809#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,12 +61,11 @@
       <file leaf-file-name="Skeleton.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rmi/Skeleton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8249">
-              <caret line="366" column="13" selection-start-line="366" selection-start-column="13" selection-end-line="366" selection-end-column="13" />
+            <state relative-caret-position="-4783">
+              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#Skeleton#0" expanded="true" />
-                <element signature="method#Skeleton#0;class#Skeleton#0" expanded="true" />
                 <element signature="method#Skeleton#1;class#Skeleton#0" expanded="true" />
                 <element signature="docComment;method#stopped#0;class#Skeleton#0" expanded="true" />
                 <element signature="method#stopped#0;class#Skeleton#0" expanded="true" />
@@ -93,11 +92,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NamingServer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Path.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/common/Path.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="365">
+              <caret line="137" column="29" selection-start-line="137" selection-start-column="25" selection-end-line="137" selection-end-column="29" />
+              <folding>
+                <element signature="method#stringToPath#0;class#Path#0" expanded="true" />
+                <element signature="method#Path#2;class#Path#0" expanded="true" />
+                <element signature="docComment;method#list#0;class#Path#0" expanded="true" />
+                <element signature="method#list#0;class#Path#0" expanded="true" />
+                <element signature="method#parent#0;class#Path#0" expanded="true" />
+                <element signature="method#last#0;class#Path#0" expanded="true" />
+                <element signature="e#7422#7423#0" expanded="true" />
+                <element signature="e#7496#7497#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NamingServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/naming/NamingServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="124" column="4" selection-start-line="124" selection-start-column="4" selection-end-line="124" selection-end-column="4" />
+            <state relative-caret-position="162">
+              <caret line="116" column="7" selection-start-line="116" selection-start-column="7" selection-end-line="116" selection-end-column="7" />
               <folding>
                 <element signature="method#NamingServer#0;class#NamingServer#0" expanded="true" />
                 <element signature="method#start#0;class#NamingServer#0" expanded="true" />
@@ -114,6 +132,40 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Stub.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rmi/Stub.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-182">
+              <caret line="170" column="45" selection-start-line="170" selection-start-column="45" selection-end-line="170" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#Stub#0" expanded="true" />
+                <element signature="docComment;method#create#0;class#Stub#0" expanded="true" />
+                <element signature="method#create#0;class#Stub#0" expanded="true" />
+                <element signature="method#create#1;class#Stub#0" expanded="true" />
+                <element signature="docComment;method#create#2;class#Stub#0" expanded="true" />
+                <element signature="method#create#2;class#Stub#0" expanded="true" />
+                <element signature="e#6456#6529#0" expanded="true" />
+                <element signature="method#StubHandler#0;class#StubHandler#0;class#Stub#0" expanded="true" />
+                <element signature="method#StubHandler#1;class#StubHandler#0;class#Stub#0" expanded="true" />
+                <element signature="method#isRemoteMethod#0;class#StubHandler#0;class#Stub#0" expanded="true" />
+                <element signature="method#remoteProcedureInvocation#0;class#StubHandler#0;class#Stub#0" expanded="true" />
+                <element signature="e#8598#8647#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DFSOutputStream.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/DFSOutputStream.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -136,8 +188,8 @@
         <option value="$PROJECT_DIR$/rmi/RMIException.java" />
         <option value="$PROJECT_DIR$/rmi/Skeleton.java" />
         <option value="$PROJECT_DIR$/rmi/Stub.java" />
-        <option value="$PROJECT_DIR$/storage/StorageServer.java" />
         <option value="$PROJECT_DIR$/naming/NamingServer.java" />
+        <option value="$PROJECT_DIR$/storage/StorageServer.java" />
       </list>
     </option>
   </component>
@@ -149,10 +201,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="703" />
-    <option name="y" value="46" />
-    <option name="width" value="662" />
-    <option name="height" value="722" />
+    <option name="x" value="41" />
+    <option name="y" value="21" />
+    <option name="width" value="1325" />
+    <option name="height" value="747" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -202,7 +254,84 @@
     </navigator>
     <panes>
       <pane id="ProjectPane">
-        <subPane />
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Distributed File System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Distributed File System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Distributed File System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Distributed File System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Distributed File System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rmi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Distributed File System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Distributed File System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rmi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Skeleton.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Distributed File System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Distributed File System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Distributed File System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Distributed File System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
       <pane id="Scratches" />
       <pane id="PackagesPane" />
@@ -470,8 +599,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="703" y="46" width="662" height="722" extended-state="4" />
-    <editor active="true" />
+    <frame x="41" y="21" width="1325" height="747" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -483,8 +612,9 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44193298" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44193298" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="ConsoleMavenPlugin" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -495,7 +625,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -601,58 +730,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/DFSInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1062">
-          <caret line="298" column="15" selection-start-line="298" selection-start-column="15" selection-end-line="298" selection-end-column="15" />
-          <folding>
-            <element signature="method#DFSInputStream#0;class#DFSInputStream#0" expanded="false" />
-            <element signature="method#available#0;class#DFSInputStream#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/PathSeparator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
           <folding>
             <element signature="method#main#0;class#PathSeparator#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/DFSOutputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="docComment;class#DFSOutputStream#0" expanded="false" />
-            <element signature="docComment;field#path#0;class#DFSOutputStream#0" expanded="false" />
-            <element signature="docComment;field#storage_server#0;class#DFSOutputStream#0" expanded="false" />
-            <element signature="docComment;field#naming_server#0;class#DFSOutputStream#0" expanded="false" />
-            <element signature="docComment;field#offset#0;class#DFSOutputStream#0" expanded="false" />
-            <element signature="docComment;field#closed#0;class#DFSOutputStream#0" expanded="false" />
-            <element signature="docComment;method#DFSOutputStream#0;class#DFSOutputStream#0" expanded="false" />
-            <element signature="method#DFSOutputStream#0;class#DFSOutputStream#0" expanded="false" />
-            <element signature="docComment;method#DFSOutputStream#1;class#DFSOutputStream#0" expanded="false" />
-            <element signature="method#DFSOutputStream#1;class#DFSOutputStream#0" expanded="false" />
-            <element signature="docComment;method#DFSOutputStream#2;class#DFSOutputStream#0" expanded="false" />
-            <element signature="method#DFSOutputStream#2;class#DFSOutputStream#0" expanded="false" />
-            <element signature="docComment;method#DFSOutputStream#3;class#DFSOutputStream#0" expanded="false" />
-            <element signature="method#DFSOutputStream#3;class#DFSOutputStream#0" expanded="false" />
-            <element signature="docComment;method#close#0;class#DFSOutputStream#0" expanded="false" />
-            <element signature="method#close#0;class#DFSOutputStream#0" expanded="false" />
-            <element signature="docComment;method#write#0;class#DFSOutputStream#0" expanded="false" />
-            <element signature="method#write#0;class#DFSOutputStream#0" expanded="false" />
-            <element signature="e#7726#7794#0" expanded="false" />
-            <element signature="e#7896#7964#0" expanded="false" />
-            <element signature="e#8663#8733#0" expanded="false" />
-            <element signature="docComment;method#write#1;class#DFSOutputStream#0" expanded="false" />
-            <element signature="method#write#1;class#DFSOutputStream#0" expanded="false" />
-            <element signature="docComment;method#skip#0;class#DFSOutputStream#0" expanded="false" />
-            <element signature="method#skip#0;class#DFSOutputStream#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -666,28 +749,6 @@
             <element signature="docComment;field#EXIT_SUCCESS#0;class#Application#0" expanded="false" />
             <element signature="docComment;field#EXIT_FAILURE#0;class#Application#0" expanded="false" />
             <element signature="docComment;method#run#0;class#Application#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rmi/Stub.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="170" column="45" selection-start-line="170" selection-start-column="45" selection-end-line="170" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#Stub#0" expanded="true" />
-            <element signature="docComment;method#create#0;class#Stub#0" expanded="true" />
-            <element signature="method#create#0;class#Stub#0" expanded="true" />
-            <element signature="method#create#1;class#Stub#0" expanded="true" />
-            <element signature="docComment;method#create#2;class#Stub#0" expanded="true" />
-            <element signature="method#create#2;class#Stub#0" expanded="true" />
-            <element signature="e#6456#6529#0" expanded="true" />
-            <element signature="method#StubHandler#0;class#StubHandler#0;class#Stub#0" expanded="true" />
-            <element signature="method#StubHandler#1;class#StubHandler#0;class#Stub#0" expanded="true" />
-            <element signature="method#isRemoteMethod#0;class#StubHandler#0;class#Stub#0" expanded="true" />
-            <element signature="method#remoteProcedureInvocation#0;class#StubHandler#0;class#Stub#0" expanded="true" />
-            <element signature="e#8598#8647#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -756,30 +817,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/Path.java">
+    <entry file="file://$PROJECT_DIR$/naming/NamingServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-175">
-          <caret line="180" column="41" selection-start-line="180" selection-start-column="41" selection-end-line="180" selection-end-column="41" />
+        <state relative-caret-position="162">
+          <caret line="116" column="7" selection-start-line="116" selection-start-column="7" selection-end-line="116" selection-end-column="7" />
           <folding>
-            <element signature="method#stringToPath#0;class#Path#0" expanded="true" />
-            <element signature="method#Path#2;class#Path#0" expanded="true" />
-            <element signature="docComment;method#list#0;class#Path#0" expanded="true" />
-            <element signature="method#list#0;class#Path#0" expanded="true" />
-            <element signature="method#parent#0;class#Path#0" expanded="true" />
-            <element signature="e#10417#10418#0" expanded="true" />
-            <element signature="e#10455#10456#0" expanded="true" />
+            <element signature="method#NamingServer#0;class#NamingServer#0" expanded="true" />
+            <element signature="method#start#0;class#NamingServer#0" expanded="true" />
+            <element signature="method#stop#0;class#NamingServer#0" expanded="true" />
+            <element signature="method#stopped#0;class#NamingServer#0" expanded="true" />
+            <element signature="method#lock#0;class#NamingServer#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.7.0-openjdk-amd64/jre/lib/rt.jar!/java/io/File.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="362" column="31" selection-start-line="362" selection-start-column="27" selection-end-line="362" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/StorageServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="281" column="30" selection-start-line="281" selection-start-column="30" selection-end-line="281" selection-end-column="30" />
+          <folding>
+            <element signature="docComment;method#StorageServer#0;class#StorageServer#0" expanded="true" />
+            <element signature="method#StorageServer#0;class#StorageServer#0" expanded="true" />
+            <element signature="docComment;method#StorageServer#1;class#StorageServer#0" expanded="true" />
+            <element signature="e#2550#2551#0" expanded="true" />
+            <element signature="e#2582#2583#0" expanded="true" />
+            <element signature="docComment;method#start#0;class#StorageServer#0" expanded="true" />
+            <element signature="method#start#0;class#StorageServer#0" expanded="true" />
+            <element signature="e#5019#5049#0" expanded="true" />
+            <element signature="method#stop#0;class#StorageServer#0" expanded="true" />
+            <element signature="method#stopped#0;class#StorageServer#0" expanded="true" />
+            <element signature="method#size#0;class#StorageServer#0" expanded="true" />
+            <element signature="method#read#0;class#StorageServer#0" expanded="true" />
+            <element signature="e#7202#7205#0" expanded="true" />
+            <element signature="e#7381#7382#0" expanded="true" />
+            <element signature="method#write#0;class#StorageServer#0" expanded="true" />
+            <element signature="e#8242#8246#0" expanded="true" />
+            <element signature="e#8325#8326#0" expanded="true" />
+            <element signature="method#create#0;class#StorageServer#0" expanded="true" />
+            <element signature="e#8504#8527#0" expanded="true" />
+            <element signature="method#delete#0;class#StorageServer#0" expanded="true" />
+            <element signature="method#removeChildrenDirs#0;class#StorageServer#0" expanded="true" />
+            <element signature="method#copy#0;class#StorageServer#0" expanded="true" />
+            <element signature="e#10273#10319#0" expanded="true" />
+            <element signature="e#10805#10809#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/DFSOutputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/DFSInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-481">
+          <caret line="198" column="4" selection-start-line="198" selection-start-column="4" selection-end-line="198" selection-end-column="4" />
+          <folding>
+            <element signature="method#DFSInputStream#3;class#DFSInputStream#0" expanded="true" />
+            <element signature="method#read#0;class#DFSInputStream#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naming/NamingStubs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rmi/Skeleton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8249">
-          <caret line="366" column="13" selection-start-line="366" selection-start-column="13" selection-end-line="366" selection-end-column="13" />
+        <state relative-caret-position="-4783">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#Skeleton#0" expanded="true" />
-            <element signature="method#Skeleton#0;class#Skeleton#0" expanded="true" />
             <element signature="method#Skeleton#1;class#Skeleton#0" expanded="true" />
             <element signature="docComment;method#stopped#0;class#Skeleton#0" expanded="true" />
             <element signature="method#stopped#0;class#Skeleton#0" expanded="true" />
@@ -805,57 +931,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage/StorageServer.java">
+    <entry file="file://$PROJECT_DIR$/rmi/Stub.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5236">
-          <caret line="313" column="20" selection-start-line="313" selection-start-column="20" selection-end-line="313" selection-end-column="20" />
+        <state relative-caret-position="-182">
+          <caret line="170" column="45" selection-start-line="170" selection-start-column="45" selection-end-line="170" selection-end-column="45" />
           <folding>
-            <element signature="docComment;method#StorageServer#0;class#StorageServer#0" expanded="true" />
-            <element signature="method#StorageServer#0;class#StorageServer#0" expanded="true" />
-            <element signature="docComment;method#StorageServer#1;class#StorageServer#0" expanded="true" />
-            <element signature="e#2550#2551#0" expanded="true" />
-            <element signature="e#2582#2583#0" expanded="true" />
-            <element signature="docComment;method#start#0;class#StorageServer#0" expanded="true" />
-            <element signature="method#start#0;class#StorageServer#0" expanded="true" />
-            <element signature="e#5019#5049#0" expanded="true" />
-            <element signature="method#stop#0;class#StorageServer#0" expanded="true" />
-            <element signature="method#stopped#0;class#StorageServer#0" expanded="true" />
-            <element signature="method#size#0;class#StorageServer#0" expanded="true" />
-            <element signature="method#read#0;class#StorageServer#0" expanded="true" />
-            <element signature="e#7202#7205#0" expanded="true" />
-            <element signature="e#7381#7382#0" expanded="true" />
-            <element signature="method#write#0;class#StorageServer#0" expanded="true" />
-            <element signature="e#8242#8246#0" expanded="true" />
-            <element signature="e#8325#8326#0" expanded="true" />
-            <element signature="method#create#0;class#StorageServer#0" expanded="true" />
-            <element signature="e#8504#8527#0" expanded="true" />
-            <element signature="method#delete#0;class#StorageServer#0" expanded="true" />
-            <element signature="method#removeChildrenDirs#0;class#StorageServer#0" expanded="true" />
-            <element signature="method#removeParent#0;class#StorageServer#0" expanded="true" />
-            <element signature="e#10273#10319#0" expanded="true" />
-            <element signature="e#10898#10902#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#Stub#0" expanded="true" />
+            <element signature="docComment;method#create#0;class#Stub#0" expanded="true" />
+            <element signature="method#create#0;class#Stub#0" expanded="true" />
+            <element signature="method#create#1;class#Stub#0" expanded="true" />
+            <element signature="docComment;method#create#2;class#Stub#0" expanded="true" />
+            <element signature="method#create#2;class#Stub#0" expanded="true" />
+            <element signature="e#6456#6529#0" expanded="true" />
+            <element signature="method#StubHandler#0;class#StubHandler#0;class#Stub#0" expanded="true" />
+            <element signature="method#StubHandler#1;class#StubHandler#0;class#Stub#0" expanded="true" />
+            <element signature="method#isRemoteMethod#0;class#StubHandler#0;class#Stub#0" expanded="true" />
+            <element signature="method#remoteProcedureInvocation#0;class#StubHandler#0;class#Stub#0" expanded="true" />
+            <element signature="e#8598#8647#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/naming/NamingStubs.java">
+    <entry file="file://$PROJECT_DIR$/common/Path.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/naming/NamingServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="124" column="4" selection-start-line="124" selection-start-column="4" selection-end-line="124" selection-end-column="4" />
+        <state relative-caret-position="365">
+          <caret line="137" column="29" selection-start-line="137" selection-start-column="25" selection-end-line="137" selection-end-column="29" />
           <folding>
-            <element signature="method#NamingServer#0;class#NamingServer#0" expanded="true" />
-            <element signature="method#start#0;class#NamingServer#0" expanded="true" />
-            <element signature="method#stop#0;class#NamingServer#0" expanded="true" />
-            <element signature="method#stopped#0;class#NamingServer#0" expanded="true" />
-            <element signature="method#lock#0;class#NamingServer#0" expanded="true" />
+            <element signature="method#stringToPath#0;class#Path#0" expanded="true" />
+            <element signature="method#Path#2;class#Path#0" expanded="true" />
+            <element signature="docComment;method#list#0;class#Path#0" expanded="true" />
+            <element signature="method#list#0;class#Path#0" expanded="true" />
+            <element signature="method#parent#0;class#Path#0" expanded="true" />
+            <element signature="method#last#0;class#Path#0" expanded="true" />
+            <element signature="e#7422#7423#0" expanded="true" />
+            <element signature="e#7496#7497#0" expanded="true" />
           </folding>
         </state>
       </provider>

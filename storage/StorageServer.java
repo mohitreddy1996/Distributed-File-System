@@ -298,10 +298,6 @@ public class StorageServer implements Storage, Command
             throw new FileNotFoundException("Cannot copy a directory");
         }
 
-        if (requiredFile.exists()){
-            removeChildrenDirs(requiredFile);
-        }
-
         if (create(file) == false){
             throw new IOException("cannot create copy file");
         }
