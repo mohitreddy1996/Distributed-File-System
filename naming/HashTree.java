@@ -22,7 +22,7 @@ enum OperationMode{
 }
 
 public class HashTree {
-    private HashNode root;
+    public HashNode root;
     private LinkedList<ServerStub> serverStubList;
 
     public HashTree (){
@@ -199,11 +199,11 @@ public class HashTree {
         return flag;
     }
 
-    private boolean nameServerOperator (OperationMode mode, HashNode root, Iterator<String> iterator, ServerStub serverStub) throws FileNotFoundException {
+    public boolean nameServerOperator (OperationMode mode, HashNode root, Iterator<String> iterator, ServerStub serverStub) throws FileNotFoundException {
         return nameServerOperator(mode, root, iterator, serverStub, null);
     }
 
-    private boolean nameServerOperator (OperationMode mode, HashNode root, Iterator<String> iterator, ServerStub serverStub, Path path) throws FileNotFoundException {
+    public boolean nameServerOperator (OperationMode mode, HashNode root, Iterator<String> iterator, ServerStub serverStub, Path path) throws FileNotFoundException {
         if(!iterator.hasNext())
         {
             if (mode == OperationMode.CREATEDIR || mode == OperationMode.CREATEFILE || mode == OperationMode.DELETE)
@@ -266,7 +266,97 @@ public class HashTree {
         // i guess wont reach here.
     }
 
+    public String[] list (Path directory) throws FileNotFoundException {
+        lock(directory, false);
+        Iterator<String> iterator = directory.iterator();
+        String fileName = null;
+        HashNode subRoot = root;
+        while (iterator.hasNext())
+        {
+            fileName = iterator.next();
+            subRoot = subRoot.getChild(fileName);
+        }
+
+        if (subRoot.hashtable == null)
+        {
+            unlock(directory, false);
+            throw new FileNotFoundException("File is not a directory");
+        }
+
+        String[] fileList = new String[subRoot.hashtable.keySet().size()];
+        fileList = subRoot.hashtable.keySet().toArray(fileList);
+        unlock(directory, false);
+        return fileList;
+    }
+
+    public boolean createFile (Path file, ServerStub serverStub) throws FileNotFoundException {
+        lock(file.parent(), true);
+        Iterator<String> iterator = file.iterator();
+        boolean flag = nameServerOperator(OperationMode.CREATEFILE, root, iterator, serverStub);
+        unlock(file.parent(), true);
+        return flag;
+    }
+
+    public boolean createDirectory (Path directory) throws FileNotFoundException {
+        lock (directory.parent(), true);
+        Iterator<String> iterator = directory.iterator();
+        boolean flag = nameServerOperator(OperationMode.CREATEDIR, root, iterator, null);
+        unlock(directory.parent(), true);
+        return flag;
+    }
+
+    public ServerStub getStorage (Path path) throws FileNotFoundException {
+        Iterator<String> iterator = path.iterator();
+        HashNode subRoot = root;
+        String name = null;
+        while (iterator.hasNext())
+        {
+            name = iterator.next();
+            if (iterator.hasNext())
+            {
+                if (subRoot.hasDirectory(name))
+                {
+                    subRoot = subRoot.getChild(name);
+                }
+                else
+                {
+                    throw new FileNotFoundException("Directory is invalid");
+                }
+            }
+            else
+            {
+                if (subRoot.hasFile(name))
+                {
+                    return subRoot.getFileStorage (name);
+                }
+                else
+                {
+                    throw new FileNotFoundException("File not found in the given directory");
+                }
+            }
+        }
+        return null;
+    }
+
+    public boolean delete (Path path) throws FileNotFoundException {
+        lock(path.parent(), true);
+        Iterator<String> iterator = path.iterator();
+        boolean flag = nameServerOperator(OperationMode.DELETE, root, iterator, null, path);
+        unlock(path.parent(), true);
+        if (!flag)
+        {
+            throw new FileNotFoundException("File not found in the server stubs available");
+        }
+        return flag;
+    }
+
+
+
+
     private class HashNode {
+        // server index to get the serverstub in serverstublist.
+        // cyclically rotate it. use % len (serverstublist);
+        private int serverIndex = 0;
         private LinkedList<ServerStub> serverStubList = null;
         private Hashtable<String, HashNode> hashtable = null;
         ReadWriteLock lock = new ReentrantReadWriteLock();
@@ -362,6 +452,13 @@ public class HashTree {
                 serverStubs.addAll(this.hashtable.get(path).getAllStubs());
             }
             return serverStubs;
+        }
+
+        public ServerStub getFileStorage(String filename)
+        {
+            HashNode node = this.hashtable.get(filename);
+            node.serverIndex++;
+            return node.serverStubList.get(this.serverIndex);
         }
 
 

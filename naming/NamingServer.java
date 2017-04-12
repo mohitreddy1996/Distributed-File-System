@@ -9,6 +9,7 @@ import storage.Storage;
 import java.io.FileNotFoundException;
 import java.net.InetSocketAddress;
 import java.util.LinkedList;
+import java.util.Random;
 
 class ServerStub {
     public Storage storageStub;
@@ -158,32 +159,79 @@ public class NamingServer implements Service, Registration
     @Override
     public String[] list(Path directory) throws FileNotFoundException
     {
-        throw new UnsupportedOperationException("not implemented");
+        return hashTree.list (directory);
     }
 
     @Override
     public boolean createFile(Path file)
         throws RMIException, FileNotFoundException
     {
-        throw new UnsupportedOperationException("not implemented");
+
+        if (file.isRoot())
+        {
+            return false;
+        }
+
+        // lock
+
+        lock(file.parent(), true);
+        // null -> randomly pick a stub.
+        try {
+            ServerStub serverStub = getRandomServerStub();
+            if (!hashTree.nameServerOperator(OperationMode.ISDIR, hashTree.root, file.iterator(), serverStub, file.parent())) {
+                throw new FileNotFoundException("Parent is not a directory");
+            }
+
+            boolean flag = hashTree.nameServerOperator(OperationMode.CREATEFILE, hashTree.root, file.iterator(), serverStub, file);
+
+            if (!flag) {
+                return false;
+            }
+
+            flag = serverStub.commandStub.create(file);
+            if (!flag) {
+                hashTree.nameServerOperator(OperationMode.DELETE, hashTree.root, file.iterator(), serverStub, file);
+            }
+
+            return flag;
+        }
+        finally {
+            unlock(file.parent(), true);
+        }
     }
 
     @Override
     public boolean createDirectory(Path directory) throws FileNotFoundException
     {
-        throw new UnsupportedOperationException("not implemented");
+        if (directory.isRoot())
+        {
+            return false;
+        }
+        lock(directory, true);
+
+        try {
+            if (!hashTree.nameServerOperator(OperationMode.ISDIR, hashTree.root, directory.iterator(), null, directory)) {
+                throw new FileNotFoundException("Directory already exists");
+            }
+
+            return hashTree.nameServerOperator(OperationMode.CREATEDIR, hashTree.root, directory.iterator(), null, directory);
+        }
+        finally {
+            unlock(directory, true);
+        }
+
     }
 
     @Override
     public boolean delete(Path path) throws FileNotFoundException
     {
-        throw new UnsupportedOperationException("not implemented");
+        return !path.isRoot() && hashTree.delete(path);
     }
 
     @Override
     public Storage getStorage(Path file) throws FileNotFoundException
     {
-        throw new UnsupportedOperationException("not implemented");
+        return hashTree.getStorage(file).storageStub;
     }
 
     // The method register is documented in Registration.java.
@@ -192,5 +240,15 @@ public class NamingServer implements Service, Registration
                            Path[] files)
     {
         throw new UnsupportedOperationException("not implemented");
+    }
+
+    public ServerStub getRandomServerStub () throws FileNotFoundException {
+        if (this.serverStubList.size() == 0)
+        {
+            throw new FileNotFoundException("Size of the server list = 0. No Storage servers available");
+        }
+        Random randomGen = new Random();
+        int index = randomGen.nextInt(this.serverStubList.size());
+        return this.serverStubList.get(index);
     }
 }
