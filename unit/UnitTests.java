@@ -18,7 +18,7 @@ public class UnitTests
         // Create the test list, the series object, and run the test series.
         @SuppressWarnings("unchecked")
         Class<? extends Test>[]     tests =
-            new Class[] {};
+            new Class[] {conformance.common.PathTest.class};
         Series                      series = new Series(tests);
         SeriesReport                report = series.run(3, System.out);
 

@@ -128,6 +128,7 @@ public abstract class Stub
                       <code>RMIException</code>, or if an object implementing
                       this interface cannot be dynamically created.
      */
+    @SuppressWarnings("unchecked")
     public static <T> T create(Class<T> c, InetSocketAddress address)
     {
         if (c == null){
@@ -146,7 +147,12 @@ public abstract class Stub
 
         // https://docs.oracle.com/javase/6/docs/api/java/lang/reflect/Proxy.html
         // https://docs.oracle.com/javase/6/docs/api/java/lang/reflect/InvocationHandler.html
-        return (T) Proxy.newProxyInstance(c.getClassLoader(), new Class<?>[] {c}, new StubHandler(c, address));
+        try {
+            return (T) Proxy.newProxyInstance(c.getClassLoader(), new Class<?>[] { c }, new StubHandler(c, address));
+        } catch (Exception e){
+            System.out.print(e);
+            return null;
+        }
 
     }
 

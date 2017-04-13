@@ -22,9 +22,9 @@ import java.net.UnknownHostException;
  */
 public class StorageServer implements Storage, Command
 {
-    private File root;
-    private int client_port;
-    private int command_port;
+    private File root = null;
+    private int client_port = 0;
+    private int command_port = 0;
     private Skeleton<Command> commandSkeleton = null;
     private Skeleton<Storage> storageSkeleton = null;
     // flag to check for only one execution.
@@ -104,15 +104,15 @@ public class StorageServer implements Storage, Command
 
         // create the skeletons.
         if (this.client_port == 0){
-            storageSkeleton = new Skeleton<Storage>(Storage.class, this);
+            storageSkeleton = new Skeleton<>(Storage.class, this);
         }else{
-            storageSkeleton = new Skeleton<Storage>(Storage.class, this, new InetSocketAddress(client_port));
+            storageSkeleton = new Skeleton<>(Storage.class, this, new InetSocketAddress(client_port));
         }
 
         if (this.command_port == 0){
-            commandSkeleton = new Skeleton<Command>(Command.class, this);
+            commandSkeleton = new Skeleton<>(Command.class, this);
         }else{
-            commandSkeleton = new Skeleton<Command>(Command.class, this, new InetSocketAddress(command_port));
+            commandSkeleton = new Skeleton<>(Command.class, this, new InetSocketAddress(command_port));
         }
 
         // start them and create stubs.
@@ -144,14 +144,17 @@ public class StorageServer implements Storage, Command
         synchronized (this){
             stopped = true;
         }
-
-        storageSkeleton.stop();
-        commandSkeleton.stop();
-        synchronized (this){
-            started = false;
-            stopped = false;
+        try {
+            storageSkeleton.stop();
+            commandSkeleton.stop();
+            synchronized (this) {
+                started = false;
+                stopped = false;
+            }
+            stopped(null);
+        }catch (Throwable throwable){
+            stopped(throwable);
         }
-        stopped(null);
     }
 
     /** Called when the storage server has shut down.
@@ -168,7 +171,7 @@ public class StorageServer implements Storage, Command
     public synchronized long size(Path file) throws FileNotFoundException
     {
         File requiredFile = file.toFile(root);
-        if (requiredFile.isDirectory() || requiredFile.exists() == false){
+        if (requiredFile.isDirectory() || !requiredFile.exists()){
             throw new FileNotFoundException("File is either a directory or File not found");
         }
         // size not function like that.
@@ -182,12 +185,12 @@ public class StorageServer implements Storage, Command
         File requiredFile = file.toFile(root);
 
         // check if it exists.
-        if (requiredFile.isDirectory() || requiredFile.exists() == false){
+        if (requiredFile.isDirectory() || !requiredFile.exists()){
             throw new FileNotFoundException("Input either a directory or File not found");
         }
 
         // check if it can be read.
-        if (requiredFile.canRead()){
+        if (!requiredFile.canRead()){
             throw new IOException("File not readable.");
         }
 
@@ -215,11 +218,11 @@ public class StorageServer implements Storage, Command
         }
 
         File requiredFile = file.toFile(root);
-        if (requiredFile.isDirectory() || requiredFile.exists() == false){
+        if (requiredFile.isDirectory() || !requiredFile.exists()){
             throw new FileNotFoundException("File is either a directory or File does not exist");
         }
 
-        if (requiredFile.canWrite() == false){
+        if (!requiredFile.canWrite()){
             throw new IOException("File is not given a write access");
         }
 
@@ -228,8 +231,13 @@ public class StorageServer implements Storage, Command
         }
 
         RandomAccessFile randomAccessFile = new RandomAccessFile(requiredFile, "rw");
-        randomAccessFile.seek(offset);
-        randomAccessFile.write(data, 0, (int) requiredFile.length());
+        try {
+            randomAccessFile.seek(offset);
+            randomAccessFile.write(data);
+        }catch (Throwable t){
+            t.printStackTrace();
+            throw t;
+        }
     }
 
     // The following methods are documented in Command.java.
@@ -238,15 +246,17 @@ public class StorageServer implements Storage, Command
     {
         // get the parent file.
         // Make directory for that and create a nre file
-
+        if (file.isRoot()){
+            return false;
+        }
         File requiredFile = file.toFile(root);
         File parent = requiredFile.getParentFile();
 
-        parent.mkdirs();
+
         try {
+            parent.mkdirs();
             return requiredFile.createNewFile();
         } catch (IOException e) {
-            e.printStackTrace();
             return false;
         }
     }
@@ -254,6 +264,9 @@ public class StorageServer implements Storage, Command
     @Override
     public synchronized boolean delete(Path path)
     {
+
+        if (path.isRoot())
+            return false;
         File requiredFile = path.toFile(root);
 
         // if the path given is a directory, delete all the files in that directory and then delete the parent.
@@ -268,7 +281,6 @@ public class StorageServer implements Storage, Command
     private boolean removeChildrenDirs (File requiredFile){
         if (requiredFile.isDirectory()){
             File[] list = requiredFile.listFiles();
-            assert list != null;
             for (File f : list){
                 removeChildrenDirs(f);
             }
@@ -302,7 +314,11 @@ public class StorageServer implements Storage, Command
             throw new FileNotFoundException("Cannot copy a directory");
         }
 
-        if (create(file) == false){
+        if (requiredFile.exists()){
+            removeChildrenDirs(requiredFile);
+        }
+
+        if (!create(file)){
             throw new IOException("cannot create copy file");
         }
 

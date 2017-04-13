@@ -148,10 +148,11 @@ public class Path implements Iterable<String>, Comparable<Path>, Serializable
         File[] listFile = directory.listFiles();
         LinkedList<Path> linkedList = new LinkedList<>();
         for(File f : listFile){
-            if (f.isDirectory()){
-                linkedList.addAll(makeList(f, new Path(prefix, f.getName())));
-            }else if(f.isFile()){
+            if(f.isFile()){
                 linkedList.add(new Path(prefix, f.getName()));
+            }
+            else if (f.isDirectory()){
+                linkedList.addAll(makeList(f, new Path(prefix, f.getName())));
             }
         }
         return linkedList;

@@ -53,8 +53,10 @@ public class NamingServer implements Service, Registration
 {
     private boolean started = false;
     private boolean stopped = false;
-    private Skeleton<Registration> registrationSkeleton;
-    private Skeleton<Service> serviceSkeleton;
+    private Skeleton<Registration> registrationSkeleton = null;
+    private Skeleton<Service> serviceSkeleton = null;
+    private Random randomGen = new Random();
+
     private LinkedList<ServerStub> serverStubList = new LinkedList<>();
     private HashTree hashTree = new HashTree(serverStubList);
     /** Creates the naming server object.
@@ -114,14 +116,17 @@ public class NamingServer implements Service, Registration
             stopped = true;
         }
 
-        registrationSkeleton.stop();
-        serviceSkeleton.stop();
-        synchronized (this){
-            stopped = false;
-            started = false;
+        try {
+            registrationSkeleton.stop();
+            serviceSkeleton.stop();
+            synchronized (this) {
+                stopped = false;
+                started = false;
+            }
+            stopped(null);
+        }catch (Throwable t){
+            stopped(t);
         }
-        stopped(null);
-
 
     }
 
@@ -238,7 +243,7 @@ public class NamingServer implements Service, Registration
     // The method register is documented in Registration.java.
     @Override
     public Path[] register(Storage client_stub, Command command_stub,
-                           Path[] files)
+                           Path[] files) throws NullPointerException, IllegalStateException
     {
         if (client_stub == null || command_stub == null || files == null){
             throw new NullPointerException("Client Stub/Command Stub/Files are null");
@@ -275,7 +280,6 @@ public class NamingServer implements Service, Registration
         {
             throw new FileNotFoundException("Size of the server list = 0. No Storage servers available");
         }
-        Random randomGen = new Random();
         int index = randomGen.nextInt(this.serverStubList.size());
         return this.serverStubList.get(index);
     }

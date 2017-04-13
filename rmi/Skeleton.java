@@ -44,7 +44,7 @@ public class Skeleton<T>
     // Flag to make sure start is called only once.
     private boolean isStarted = false;
     // ToDo: not sure
-    private ServerSocket serverSocket;
+    private ServerSocket serverSocket = null;
     /** Creates a <code>Skeleton</code> with no initial server address. The
         address will be determined by the system when <code>start</code> is
         called. Equivalent to using <code>Skeleton(null)</code>.
@@ -198,10 +198,8 @@ public class Skeleton<T>
             wait();
         } catch (InterruptedException e) {
             isStarted = false;
-            e.printStackTrace();
         } catch (Exception e){
             isStarted = false;
-
         }
     }
 
@@ -225,8 +223,6 @@ public class Skeleton<T>
                         serverSocket = new ServerSocket();
                         serverSocket.bind(address);
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
                 } catch (Exception e){
                     if(Skeleton.this.isStarted){
                         listen_error(e);
@@ -242,8 +238,6 @@ public class Skeleton<T>
                     // create another runnable for this.
                     Thread thread = new Thread(new ClientHandler(socket));
                     thread.start();
-                } catch (IOException e) {
-                    e.printStackTrace();
                 } catch (Exception e){
                     if(Skeleton.this.isStarted){
                        listen_error(e);
@@ -278,14 +272,12 @@ public class Skeleton<T>
             // https://docs.oracle.com/javase/tutorial/reflect/member/method.html
 
             // https://docs.oracle.com/javase/7/docs/api/java/io/ObjectOutputStream.html
-            ObjectInputStream inputStream = null;
             ObjectOutputStream outputStream = null;
             Method method = null;
-
             try {
                 outputStream = new ObjectOutputStream(clientSocket.getOutputStream());
                 outputStream.flush();
-                inputStream = new ObjectInputStream(clientSocket.getInputStream());
+                ObjectInputStream inputStream = new ObjectInputStream(clientSocket.getInputStream());
                 // get the arguments for invoke.
                 String methodName = (String) inputStream.readObject();
 
@@ -293,8 +285,13 @@ public class Skeleton<T>
                 Class<?>[] parameterTypes = (Class<?>[]) inputStream.readObject();
 
                 Object[] args = (Object[]) inputStream.readObject();
-
-                method = c.getMethod(methodName, parameterTypes);
+                try {
+                    method = c.getMethod(methodName, parameterTypes);
+                }catch (NoSuchMethodException e){
+                    outputStream.writeObject(RMIStatus.RMIExpt);
+                    outputStream.writeObject(e.getCause());
+                    clientSocket.close();
+                }
                 if (method != null){
                     // invoke the method.
                     Object result = method.invoke(server, args);
@@ -304,17 +301,8 @@ public class Skeleton<T>
                     clientSocket.close();
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                service_error(new RMIException(e));
             } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            } catch (NoSuchMethodException e) {
-                try {
-                    outputStream.writeObject(RMIStatus.RMIExpt);
-                    outputStream.writeObject(e.getCause());
-                    clientSocket.close();
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
                 e.printStackTrace();
             } catch (InvocationTargetException e) {
                 try {
@@ -325,7 +313,7 @@ public class Skeleton<T>
                     service_error(new RMIException(e1));
                 }
                 e.printStackTrace();
-            } catch (IllegalAccessException e) {
+            } catch (Exception e){
                 e.printStackTrace();
             }
         }
@@ -354,13 +342,12 @@ public class Skeleton<T>
             this.serverSocket.close();
         } catch (IOException e) {
             isStarted = true;
-            e.printStackTrace();
         }
 
     }
 
     // return socket address
-    public InetSocketAddress getSocketAddress (){
+    public synchronized InetSocketAddress getSocketAddress (){
         return this.address;
     }
 

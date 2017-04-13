@@ -22,9 +22,6 @@ public class HashTree {
     public HashNode root;
     private LinkedList<ServerStub> serverStubList;
 
-    public HashTree (){
-
-    }
 
     public HashTree (LinkedList<ServerStub> serverStubList){
         this.serverStubList = serverStubList;
@@ -59,7 +56,12 @@ public class HashTree {
 
             if (root.hasDirectory(nextDir))
             {
-                apply_lock_recursive(root.getChild(nextDir), iterator, path, exclusiveLock);
+                try {
+                    apply_lock_recursive(root.getChild(nextDir), iterator, path, exclusiveLock);
+                }catch (FileNotFoundException e){
+                    root.unlockRead();
+                    throw e;
+                }
             }
             else
             {
@@ -181,10 +183,8 @@ public class HashTree {
                 try {
                     serverStub.commandStub.copy(fileName, parentNode.serverStubList.get(0).storageStub);
                 } catch (RMIException e) {
-                    e.printStackTrace();
                     continue;
                 } catch (IOException e) {
-                    e.printStackTrace();
                     continue;
                 }
 
@@ -283,7 +283,7 @@ public class HashTree {
         String nextDir = iterator.next();
         if (iterator.hasNext())
         {
-            return nameServerOperator(mode, root.getChild(nextDir), iterator, serverStub, null);
+            return nameServerOperator(mode, root.getChild(nextDir), iterator, serverStub);
         }
         else
         {
@@ -316,14 +316,10 @@ public class HashTree {
                     {
                         return false;
                     }
-                    else if (mode == OperationMode.CREATEDIR || mode == OperationMode.CREATEFILE)
-                    {
-                        root.create (nextDir, serverStub);
-                        return true;
-                    }
                     else
                     {
-                        return false;
+                        root.create(nextDir, serverStub);
+                        return true;
                     }
                 }
             }
@@ -373,7 +369,7 @@ public class HashTree {
     public ServerStub getStorage (Path path) throws FileNotFoundException {
         Iterator<String> iterator = path.iterator();
         HashNode subRoot = root;
-        String name = null;
+        String name;
         while (iterator.hasNext())
         {
             name = iterator.next();
@@ -513,9 +509,9 @@ public class HashTree {
                 return new HashSet<>(this.serverStubList);
             }
             HashSet<ServerStub> serverStubs = new HashSet<>();
-            for (String path : this.hashtable.keySet())
-            {
-                serverStubs.addAll(this.hashtable.get(path).getAllStubs());
+
+            for (HashNode hashNode : hashtable.values()){
+                serverStubs.addAll(hashNode.getAllStubs());
             }
             return serverStubs;
         }
@@ -524,7 +520,7 @@ public class HashTree {
         {
             HashNode node = this.hashtable.get(filename);
             node.serverIndex++;
-            return node.serverStubList.get(this.serverIndex%node.serverStubList.size());
+            return node.serverStubList.get(node.serverIndex%node.serverStubList.size());
         }
 
 
