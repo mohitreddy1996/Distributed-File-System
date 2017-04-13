@@ -181,8 +181,7 @@ public class Path implements Iterable<String>, Comparable<Path>, Serializable
         {
             throw new IllegalArgumentException("Path represents the root directory");
         }
-        Path parentPath = new Path(parent.toString());
-        return parentPath;
+        return new Path(parent.toString());
     }
 
     /** Returns the last component in the path.

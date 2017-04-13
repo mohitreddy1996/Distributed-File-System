@@ -175,15 +175,15 @@ public class NamingServer implements Service, Registration
 
         // lock
 
-        lock(file.parent(), true);
+        hashTree.lock(file.parent(), true);
         // null -> randomly pick a stub.
         try {
             ServerStub serverStub = getRandomServerStub();
-            if (!hashTree.nameServerOperator(OperationMode.ISDIR, hashTree.root, file.iterator(), serverStub, file.parent())) {
+            if (!hashTree.nameServerOperator(OperationMode.ISDIR, file.parent(), serverStub)) {
                 throw new FileNotFoundException("Parent is not a directory");
             }
 
-            boolean flag = hashTree.nameServerOperator(OperationMode.CREATEFILE, hashTree.root, file.iterator(), serverStub, file);
+            boolean flag = hashTree.nameServerOperator(OperationMode.CREATEFILE, file, serverStub);
 
             if (!flag) {
                 return false;
@@ -191,13 +191,13 @@ public class NamingServer implements Service, Registration
 
             flag = serverStub.commandStub.create(file);
             if (!flag) {
-                hashTree.nameServerOperator(OperationMode.DELETE, hashTree.root, file.iterator(), serverStub, file);
+                hashTree.nameServerOperator(OperationMode.DELETE, file, serverStub);
             }
 
             return flag;
         }
         finally {
-            unlock(file.parent(), true);
+            hashTree.unlock(file.parent(), true);
         }
     }
 
@@ -208,17 +208,17 @@ public class NamingServer implements Service, Registration
         {
             return false;
         }
-        lock(directory, true);
+        hashTree.lock(directory.parent(), true);
 
         try {
-            if (!hashTree.nameServerOperator(OperationMode.ISDIR, hashTree.root, directory.iterator(), null, directory)) {
+            if (!hashTree.nameServerOperator(OperationMode.ISDIR,directory.parent(), null)) {
                 throw new FileNotFoundException("Directory already exists");
             }
 
-            return hashTree.nameServerOperator(OperationMode.CREATEDIR, hashTree.root, directory.iterator(), null, directory);
+            return hashTree.nameServerOperator(OperationMode.CREATEDIR,directory, null);
         }
         finally {
-            unlock(directory, true);
+            hashTree.unlock(directory.parent(), true);
         }
 
     }

@@ -73,11 +73,16 @@ public class HashTree {
             // could be a file or an empty directory.
             root.lockRead();
 
+            if (!root.hasDirectory(nextDir) && !root.hasFile(nextDir)){
+                root.unlockRead();
+                throw new FileNotFoundException("No such file exists");
+            }
+
             HashNode lastComp = root.getChild(nextDir);
             if (exclusiveLock)
             {
                 // write.
-                lastComp.lockWrite();;
+                lastComp.lockWrite();
                 if (lastComp.hashtable == null)
                 {
                     // remove replicates.
@@ -137,6 +142,9 @@ public class HashTree {
                 hashNode.unlockWrite();
                 hashNode.lockRead();
             }
+
+            hashNode = hashNode.getChild(currPath);
+            currPath = iterator.next();
         }
 
         if (created){
@@ -214,7 +222,7 @@ public class HashTree {
         {
             if(root.hasDirectory(nextDir))
             {
-                unlockRecursive(root, iterator, exclusiveLock);
+                unlockRecursive(root.getChild(nextDir), iterator, exclusiveLock);
             }
             else
             {
@@ -223,6 +231,10 @@ public class HashTree {
         }
         else
         {
+            if (!root.hasDirectory(nextDir) && !root.hasFile(nextDir))
+            {
+                throw new IllegalArgumentException("The file is not a directory nor a file");
+            }
             HashNode lastComp = root.getChild(nextDir);
             if (exclusiveLock)
             {
@@ -238,15 +250,22 @@ public class HashTree {
     }
 
     public boolean isDirectory (Path path) throws FileNotFoundException {
-        lock(path.parent(), false);
+        lock(path, false);
         Iterator<String> iterator = path.iterator();
         boolean flag = nameServerOperator(OperationMode.ISDIR, root, iterator, null);
-        unlock(path.parent(), false);
+        unlock(path, false);
         return flag;
     }
 
     public boolean nameServerOperator (OperationMode mode, HashNode root, Iterator<String> iterator, ServerStub serverStub) throws FileNotFoundException {
         return nameServerOperator(mode, root, iterator, serverStub, null);
+    }
+
+    public boolean nameServerOperator(OperationMode mode, Path path, ServerStub serverStub) throws FileNotFoundException {
+        if (mode == OperationMode.DELETE)
+            return nameServerOperator(mode, root, path.iterator(), serverStub, path);
+        else
+            return nameServerOperator(mode, root, path.iterator(), serverStub);
     }
 
     public boolean nameServerOperator (OperationMode mode, HashNode root, Iterator<String> iterator, ServerStub serverStub, Path path) throws FileNotFoundException {
@@ -413,6 +432,7 @@ public class HashTree {
 
         public HashNode (ServerStub serverStub)
         {
+            this.serverStubList = new LinkedList<>();
             this.serverStubList.add(serverStub);
         }
 
@@ -428,7 +448,7 @@ public class HashTree {
 
         public boolean hasDirectory (String rootDir)
         {
-            HashNode node = hashtable.get(rootDir);
+            HashNode node = this.hashtable.get(rootDir);
             if (node != null && node.hashtable != null)
                 return true;
             return false;
@@ -504,7 +524,7 @@ public class HashTree {
         {
             HashNode node = this.hashtable.get(filename);
             node.serverIndex++;
-            return node.serverStubList.get(this.serverIndex);
+            return node.serverStubList.get(this.serverIndex%node.serverStubList.size());
         }
 
 

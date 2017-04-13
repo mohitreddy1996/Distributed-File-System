@@ -228,7 +228,7 @@ public class Skeleton<T>
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (Exception e){
-                    if(isStarted){
+                    if(Skeleton.this.isStarted){
                         listen_error(e);
                     }
                 }
@@ -245,12 +245,13 @@ public class Skeleton<T>
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (Exception e){
-                    if(isStarted){
+                    if(Skeleton.this.isStarted){
                        listen_error(e);
                     }
                 }
                 synchronized (Skeleton.this){
                     if (!isStarted){
+                        stopped(null);
                         return;
                     }
                 }
@@ -286,11 +287,12 @@ public class Skeleton<T>
                 outputStream.flush();
                 inputStream = new ObjectInputStream(clientSocket.getInputStream());
                 // get the arguments for invoke.
-                Object[] args = (Object[]) inputStream.readObject();
-                // get method name.
                 String methodName = (String) inputStream.readObject();
+
                 // get parameter types
                 Class<?>[] parameterTypes = (Class<?>[]) inputStream.readObject();
+
+                Object[] args = (Object[]) inputStream.readObject();
 
                 method = c.getMethod(methodName, parameterTypes);
                 if (method != null){
@@ -309,7 +311,7 @@ public class Skeleton<T>
                 try {
                     outputStream.writeObject(RMIStatus.RMIExpt);
                     outputStream.writeObject(e.getCause());
-                    outputStream.close();
+                    clientSocket.close();
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
@@ -318,7 +320,7 @@ public class Skeleton<T>
                 try {
                     outputStream.writeObject(RMIStatus.Expt);
                     outputStream.writeObject(e.getCause());
-                    outputStream.close();
+                    clientSocket.close();
                 } catch (IOException e1) {
                     service_error(new RMIException(e1));
                 }

@@ -239,29 +239,36 @@ public abstract class Stub
             Object inputStreamObject = null;
             RMIStatus rmiStatus;
 
-            StubHandler invocationHandler = (StubHandler) Proxy.getInvocationHandler(o);
-            Socket clientSocket = new Socket(invocationHandler.address.getAddress(), invocationHandler.address.getPort());
+            try {
+                StubHandler invocationHandler = (StubHandler) Proxy.getInvocationHandler(o);
+                Socket clientSocket = new Socket(invocationHandler.address.getAddress(), invocationHandler.address.getPort());
 
-            ObjectOutputStream outputStream = new ObjectOutputStream(clientSocket.getOutputStream());
-            // always flush the data.
-            outputStream.flush();
-            outputStream.writeObject(method.getName());
-            outputStream.writeObject(method.getParameterTypes());
-            outputStream.writeObject(objects);
+                ObjectOutputStream outputStream = new ObjectOutputStream(clientSocket.getOutputStream());
+                // always flush the data.
+                outputStream.flush();
 
-            // read data incoming from the server. (skeleton)
-            // order -> status then the data.
-            ObjectInputStream inputStream = new ObjectInputStream(clientSocket.getInputStream());
-            rmiStatus = (RMIStatus) inputStream.readObject();
-            inputStreamObject = (Object) inputStream.readObject();
+                outputStream.writeObject(method.getName());
+                outputStream.writeObject(method.getParameterTypes());
+                outputStream.writeObject(objects);
 
-            // close the client socket.
-            if (rmiStatus == RMIStatus.OK){
-                return inputStreamObject;
-            }else if (rmiStatus == RMIStatus.RMIExpt){
-                throw (Throwable) inputStreamObject;
+                // read data incoming from the server. (skeleton)
+                // order -> status then the data.
+                ObjectInputStream inputStream = new ObjectInputStream(clientSocket.getInputStream());
+                rmiStatus = (RMIStatus) inputStream.readObject();
+                inputStreamObject = inputStream.readObject();
+
+                // close the client socket.
+                clientSocket.close();
+                if (rmiStatus == RMIStatus.OK) {
+                    return inputStreamObject;
+                } else if (rmiStatus == RMIStatus.RMIExpt) {
+                    throw (Throwable) inputStreamObject;
+                }
             }
-
+            catch (Exception e)
+            {
+                throw new RMIException(e);
+            }
             throw (Throwable) inputStreamObject;
         }
     }
