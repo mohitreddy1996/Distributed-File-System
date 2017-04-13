@@ -2,120 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79232ab4-55ec-4212-a6fc-2faaf6a81c1e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/Application.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/ApplicationFailure.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/ChangeDirectoryDummy.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/ClientApplication.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/Get.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/Launcher.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/List.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/MakeDirectory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/NamingServerApp$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/NamingServerApp$StoppingNamingServer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/NamingServerApp.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/Parse.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/PrintWorkingDirectory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/Put.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/RemotePath.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/Remove.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/ServerApplication$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/ServerApplication$BadUsageException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/ServerApplication$EOFThread.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/ServerApplication$TerminationTimeoutTask.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/ServerApplication.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/StorageServerApp$StoppingStorageServer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/StorageServerApp.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/Touch.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/PathSeparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/DFSInputStream.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/DFSOutputStream.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/common/Path.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/ConformanceTests.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/common/PathTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/naming/ContactTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/naming/CreationTest$CreationTestStorageServer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/naming/CreationTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/naming/ListingTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/naming/NamingTest$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/naming/NamingTest$TestNamingServer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/naming/NamingTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/naming/RegistrationTest$UnsuccessfulStorageServer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/naming/RegistrationTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/naming/StubRetrievalTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/naming/TestStorageServer$CommandSkeleton.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/naming/TestStorageServer$StorageSkeleton.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/naming/TestStorageServer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/rmi/BadInterface.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/rmi/ConnectionTest$TestSkeleton.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/rmi/ConnectionTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/rmi/SkeletonTest$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/rmi/SkeletonTest$BadInterfaceImplementation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/rmi/SkeletonTest$TestSkeleton.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/rmi/SkeletonTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/rmi/StubTest$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/rmi/StubTest$ConnectionCheckThread.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/rmi/StubTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/rmi/TestInterface.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/rmi/TestServer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/rmi/ThreadTest$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/rmi/ThreadTest$SecondThread.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/rmi/ThreadTest$TestSkeleton.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/rmi/ThreadTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/storage/AccessTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/storage/DirectoryTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/storage/RegistrationTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/storage/StorageTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/storage/TestNamingServer$TestSkeleton.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conformance/storage/TestNamingServer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dfs.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fuse/build/MakeClassesImage$ClassInformation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fuse/build/MakeClassesImage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/naming/HashTree$HashNode.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/naming/HashTree.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/naming/NamingServer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/naming/NamingStubs.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/naming/OperationMode.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/naming/Registration.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/naming/ServerStub.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/naming/Service.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/rmi/RMIException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/rmi/RMIStatus.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/rmi/SampleClassUnderTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/rmi/Skeleton$ClientHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/rmi/Skeleton$Listener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/rmi/Skeleton.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/rmi/Stub$StubHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/rmi/Stub.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/Command.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/Storage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/StorageServer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/FailedDuringTask.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/FatalError.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/InfiniteLoopTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/SelfTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Series$CleanupThread.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Series$CleanupTimeoutTask.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Series$TestState.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Series$TestThread.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Series$TestTimeoutTask.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Series.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/SeriesReport.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/TemporaryDirectory$CleanupShutdownHook.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/TemporaryDirectory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/TemporaryDirectoryTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Test.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/TestFailed.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/TestReport.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/TestUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Timeout.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/unit/UnitTests.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/Path.java" afterPath="$PROJECT_DIR$/common/Path.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/naming/HashTree.java" afterPath="$PROJECT_DIR$/naming/HashTree.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/naming/NamingServer.java" afterPath="$PROJECT_DIR$/naming/NamingServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rmi/Skeleton.java" afterPath="$PROJECT_DIR$/rmi/Skeleton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rmi/Stub.java" afterPath="$PROJECT_DIR$/rmi/Stub.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/StorageServer.java" afterPath="$PROJECT_DIR$/storage/StorageServer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unit/UnitTests.java" afterPath="$PROJECT_DIR$/unit/UnitTests.java" />
     </list>
     <ignored path="Distributed File System.iws" />
@@ -140,7 +26,7 @@
       <file leaf-file-name="StorageServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/storage/StorageServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-81">
+            <state relative-caret-position="-740">
               <caret line="121" column="37" selection-start-line="121" selection-start-column="37" selection-end-line="121" selection-end-column="37" />
               <folding />
             </state>
@@ -183,14 +69,61 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HashTree.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Path.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/Path.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-189">
+              <caret line="154" column="72" selection-start-line="154" selection-start-column="65" selection-end-line="154" selection-end-column="72" />
+              <folding>
+                <element signature="method#stringToPath#0;class#Path#0" expanded="true" />
+                <element signature="docComment;method#Path#1;class#Path#0" expanded="true" />
+                <element signature="method#Path#1;class#Path#0" expanded="true" />
+                <element signature="docComment;method#emptyPath#0;class#Path#0" expanded="true" />
+                <element signature="method#Path#2;class#Path#0" expanded="true" />
+                <element signature="method#iterator#0;class#Path#0" expanded="true" />
+                <element signature="method#list#0;class#Path#0" expanded="true" />
+                <element signature="method#isRoot#0;class#Path#0" expanded="true" />
+                <element signature="method#parent#0;class#Path#0" expanded="true" />
+                <element signature="method#last#0;class#Path#0" expanded="true" />
+                <element signature="method#isSubpath#0;class#Path#0" expanded="true" />
+                <element signature="method#toFile#0;class#Path#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NamingServer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/naming/NamingServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="106">
+              <caret line="266" column="47" selection-start-line="266" selection-start-column="47" selection-end-line="266" selection-end-column="47" />
+              <folding>
+                <element signature="method#ServerStub#0;class#ServerStub#0" expanded="true" />
+                <element signature="method#equals#0;class#ServerStub#0" expanded="true" />
+                <element signature="method#start#0;class#NamingServer#0" expanded="true" />
+                <element signature="method#stop#0;class#NamingServer#0" expanded="true" />
+                <element signature="method#lock#0;class#NamingServer#0" expanded="true" />
+                <element signature="method#isDirectory#0;class#NamingServer#0" expanded="true" />
+                <element signature="method#list#0;class#NamingServer#0" expanded="true" />
+                <element signature="method#createFile#0;class#NamingServer#0" expanded="true" />
+                <element signature="method#createDirectory#0;class#NamingServer#0" expanded="true" />
+                <element signature="method#delete#0;class#NamingServer#0" expanded="true" />
+                <element signature="method#getStorage#0;class#NamingServer#0" expanded="true" />
+                <element signature="method#getRandomServerStub#0;class#NamingServer#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HashTree.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/naming/HashTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1008">
-              <caret line="65" column="16" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
+            <state relative-caret-position="-775">
+              <caret line="122" column="19" selection-start-line="122" selection-start-column="19" selection-end-line="122" selection-end-column="19" />
               <folding>
                 <element signature="method#HashTree#0;class#HashTree#0" expanded="true" />
                 <element signature="method#lock#0;class#HashTree#0" expanded="true" />
+                <element signature="method#apply_lock_recursive#0;class#HashTree#0" expanded="true" />
                 <element signature="method#removeWriteReplicas#0;class#HashTree#0" expanded="true" />
                 <element signature="method#recursiveFileCreation#0;class#HashTree#0" expanded="true" />
                 <element signature="method#addReadReplicas#0;class#HashTree#0" expanded="true" />
@@ -212,6 +145,40 @@
                 <element signature="method#getAllStubs#0;class#HashNode#0;class#HashTree#0" expanded="true" />
                 <element signature="method#getFileStorage#0;class#HashNode#0;class#HashTree#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UnitTests.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/unit/UnitTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegistrationTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conformance/storage/RegistrationTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="64" column="27" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="30" />
+              <folding>
+                <element signature="method#RegistrationTest#0;class#RegistrationTest#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccessTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conformance/storage/AccessTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="39" column="43" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="43" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -353,20 +320,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Distributed File System" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Distributed File System" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="naming" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -418,6 +371,60 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="conformance" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Distributed File System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Distributed File System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="conformance" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="storage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Distributed File System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Distributed File System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="conformance" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rmi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Distributed File System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Distributed File System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="conformance" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="naming" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -749,10 +756,10 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46345514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35566187" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1847233" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11925175" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="ConsoleMavenPlugin" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.55315614" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -833,58 +840,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/common/Path.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/naming/NamingServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="116" column="7" selection-start-line="116" selection-start-column="7" selection-end-line="116" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#ServerStub#0;class#ServerStub#0" expanded="true" />
-            <element signature="method#equals#0;class#ServerStub#0" expanded="true" />
-            <element signature="method#NamingServer#0;class#NamingServer#0" expanded="false" />
-            <element signature="method#start#0;class#NamingServer#0" expanded="true" />
-            <element signature="method#stop#0;class#NamingServer#0" expanded="true" />
-            <element signature="method#stopped#0;class#NamingServer#0" expanded="false" />
-            <element signature="method#lock#0;class#NamingServer#0" expanded="true" />
-            <element signature="e#5101#5102#0" expanded="false" />
-            <element signature="e#5149#5150#0" expanded="false" />
-            <element signature="method#isDirectory#0;class#NamingServer#0" expanded="true" />
-            <element signature="method#list#0;class#NamingServer#0" expanded="true" />
-            <element signature="method#createFile#0;class#NamingServer#0" expanded="true" />
-            <element signature="e#5673#5677#0" expanded="false" />
-            <element signature="e#6431#6435#0" expanded="false" />
-            <element signature="method#createDirectory#0;class#NamingServer#0" expanded="true" />
-            <element signature="e#6675#6679#0" expanded="true" />
-            <element signature="e#6782#6786#0" expanded="false" />
-            <element signature="e#7048#7052#0" expanded="true" />
-            <element signature="method#delete#0;class#NamingServer#0" expanded="true" />
-            <element signature="method#getStorage#0;class#NamingServer#0" expanded="true" />
-            <element signature="method#getRandomServerStub#0;class#NamingServer#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/naming/NamingStubs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding>
-            <element signature="method#service#0;class#NamingStubs#0" expanded="true" />
-            <element signature="e#1024#1025#0" expanded="false" />
-            <element signature="e#1078#1079#0" expanded="false" />
-            <element signature="method#registration#0;class#NamingStubs#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rmi/Stub.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
@@ -1271,8 +1226,8 @@
         <state relative-caret-position="216">
           <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
           <folding>
-            <element signature="e#554#555#0" expanded="true" />
-            <element signature="e#582#583#0" expanded="true" />
+            <element signature="e#554#555#0" expanded="false" />
+            <element signature="e#582#583#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1313,35 +1268,6 @@
           <folding>
             <element signature="method#listFiles#0;class#File#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/Path.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="155" column="13" selection-start-line="155" selection-start-column="13" selection-end-line="155" selection-end-column="13" />
-          <folding>
-            <element signature="method#stringToPath#0;class#Path#0" expanded="true" />
-            <element signature="docComment;method#Path#1;class#Path#0" expanded="true" />
-            <element signature="method#Path#1;class#Path#0" expanded="true" />
-            <element signature="docComment;method#emptyPath#0;class#Path#0" expanded="true" />
-            <element signature="method#Path#2;class#Path#0" expanded="true" />
-            <element signature="method#iterator#0;class#Path#0" expanded="true" />
-            <element signature="method#list#0;class#Path#0" expanded="true" />
-            <element signature="method#isRoot#0;class#Path#0" expanded="true" />
-            <element signature="method#parent#0;class#Path#0" expanded="true" />
-            <element signature="method#last#0;class#Path#0" expanded="true" />
-            <element signature="method#isSubpath#0;class#Path#0" expanded="true" />
-            <element signature="method#toFile#0;class#Path#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/StorageServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-81">
-          <caret line="121" column="37" selection-start-line="121" selection-start-column="37" selection-end-line="121" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1416,49 +1342,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/unit/UnitTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="method#main#0;class#UnitTests#0" expanded="true" />
-            <element signature="e#376#406#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conformance/storage/RegistrationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-          <folding>
-            <element signature="method#RegistrationTest#0;class#RegistrationTest#0" expanded="true" />
-            <element signature="e#2712#2755#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/naming/NamingServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="211" column="31" selection-start-line="211" selection-start-column="31" selection-end-line="211" selection-end-column="31" />
-          <folding>
-            <element signature="method#ServerStub#0;class#ServerStub#0" expanded="true" />
-            <element signature="method#equals#0;class#ServerStub#0" expanded="true" />
-            <element signature="method#start#0;class#NamingServer#0" expanded="true" />
-            <element signature="method#stop#0;class#NamingServer#0" expanded="true" />
-            <element signature="method#lock#0;class#NamingServer#0" expanded="true" />
-            <element signature="method#isDirectory#0;class#NamingServer#0" expanded="true" />
-            <element signature="method#list#0;class#NamingServer#0" expanded="true" />
-            <element signature="method#createFile#0;class#NamingServer#0" expanded="true" />
-            <element signature="method#delete#0;class#NamingServer#0" expanded="true" />
-            <element signature="method#getStorage#0;class#NamingServer#0" expanded="true" />
-            <element signature="method#register#0;class#NamingServer#0" expanded="true" />
-            <element signature="method#getRandomServerStub#0;class#NamingServer#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/SelfTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -1469,13 +1352,98 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/unit/UnitTests.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/Path.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-189">
+          <caret line="154" column="72" selection-start-line="154" selection-start-column="65" selection-end-line="154" selection-end-column="72" />
+          <folding>
+            <element signature="method#stringToPath#0;class#Path#0" expanded="true" />
+            <element signature="docComment;method#Path#1;class#Path#0" expanded="true" />
+            <element signature="method#Path#1;class#Path#0" expanded="true" />
+            <element signature="docComment;method#emptyPath#0;class#Path#0" expanded="true" />
+            <element signature="method#Path#2;class#Path#0" expanded="true" />
+            <element signature="method#iterator#0;class#Path#0" expanded="true" />
+            <element signature="method#list#0;class#Path#0" expanded="true" />
+            <element signature="method#isRoot#0;class#Path#0" expanded="true" />
+            <element signature="method#parent#0;class#Path#0" expanded="true" />
+            <element signature="method#last#0;class#Path#0" expanded="true" />
+            <element signature="method#isSubpath#0;class#Path#0" expanded="true" />
+            <element signature="method#toFile#0;class#Path#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conformance/storage/AccessTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="39" column="43" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conformance/storage/RegistrationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="64" column="27" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="30" />
+          <folding>
+            <element signature="method#RegistrationTest#0;class#RegistrationTest#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naming/NamingServer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/StorageServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-740">
+          <caret line="121" column="37" selection-start-line="121" selection-start-column="37" selection-end-line="121" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naming/NamingServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="266" column="47" selection-start-line="266" selection-start-column="47" selection-end-line="266" selection-end-column="47" />
+          <folding>
+            <element signature="method#ServerStub#0;class#ServerStub#0" expanded="true" />
+            <element signature="method#equals#0;class#ServerStub#0" expanded="true" />
+            <element signature="method#start#0;class#NamingServer#0" expanded="true" />
+            <element signature="method#stop#0;class#NamingServer#0" expanded="true" />
+            <element signature="method#lock#0;class#NamingServer#0" expanded="true" />
+            <element signature="method#isDirectory#0;class#NamingServer#0" expanded="true" />
+            <element signature="method#list#0;class#NamingServer#0" expanded="true" />
+            <element signature="method#createFile#0;class#NamingServer#0" expanded="true" />
+            <element signature="method#createDirectory#0;class#NamingServer#0" expanded="true" />
+            <element signature="method#delete#0;class#NamingServer#0" expanded="true" />
+            <element signature="method#getStorage#0;class#NamingServer#0" expanded="true" />
+            <element signature="method#getRandomServerStub#0;class#NamingServer#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/naming/HashTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="65" column="16" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
+        <state relative-caret-position="-775">
+          <caret line="122" column="19" selection-start-line="122" selection-start-column="19" selection-end-line="122" selection-end-column="19" />
           <folding>
             <element signature="method#HashTree#0;class#HashTree#0" expanded="true" />
             <element signature="method#lock#0;class#HashTree#0" expanded="true" />
+            <element signature="method#apply_lock_recursive#0;class#HashTree#0" expanded="true" />
             <element signature="method#removeWriteReplicas#0;class#HashTree#0" expanded="true" />
             <element signature="method#recursiveFileCreation#0;class#HashTree#0" expanded="true" />
             <element signature="method#addReadReplicas#0;class#HashTree#0" expanded="true" />
@@ -1496,6 +1464,16 @@
             <element signature="method#delete#0;class#HashNode#0;class#HashTree#0" expanded="true" />
             <element signature="method#getAllStubs#0;class#HashNode#0;class#HashTree#0" expanded="true" />
             <element signature="method#getFileStorage#0;class#HashNode#0;class#HashTree#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unit/UnitTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
